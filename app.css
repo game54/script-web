@@ -48,6 +48,11 @@ input[type="radio"] {
   padding: 0.5rem;
 }
 
+.main {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .onoffspan {
   padding: 0.3rem;
 }
