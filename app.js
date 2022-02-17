@@ -30,25 +30,25 @@ let saveFile = () => {
 
   // This variable stores all the data.
   let data = `1)XML Profile Fight back:
-${profile1.value}
+${profile1.value || "empty"}
 ------------------------------------------------------------------------------------------------
 2)XML Profile Active:
-${profile2.value}
+${profile2.value || "empty"}
 ------------------------------------------------------------------------------------------------
 3)GamePath:
-${gamepath.value}
+${gamepath.value || "empty"}
 ------------------------------------------------------------------------------------------------
 4)Username:
-${userName.value}
+${userName.value || "empty"}
 ------------------------------------------------------------------------------------------------
 5)pass:
-${password.value}
+${password.value || "empty"}
 ------------------------------------------------------------------------------------------------
 6)LoadMap:
-${loadMap.value}
+${loadMap.value || "empty"}
 ------------------------------------------------------------------------------------------------
 7)GK-ID(TELEPORT TO HUNTING GROUNDS):
-${gkId.value}
+${gkId.value || "empty"}
 8)TeleportPath[5]:
 ${gkpath1.value || "empty"}
 ${gkpath2.value || "empty"}
