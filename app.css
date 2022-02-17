@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  /* background-color: #262626; */
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+div {
+  padding: 1rem;
+  /* background-color: #bbb; */
+  /* background-color: #f6f6f6; */
+  overflow: hidden;
+}
+
+p {
+  padding: 0.5rem;
+}
+
+input[type="text"],
+textarea,
+select {
+  font: 17px Calibri;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="button"] {
+  font: 17px Calibri;
+  width: auto;
+  float: right;
+  cursor: pointer;
+  padding: 7px;
+}
+
+input[type="radio"] {
+  padding: 0.5rem;
+}
+
+.onoffspan {
+  padding: 0.3rem;
+}
+
+.onoff {
+  display: flex;
+}
+
+.grouped {
+  border: 5px solid #222;
+  padding: 0.2rem;
+  /* background-color: #222; */
+}
+
+.inGroup {
+  padding: 0.1rem 2rem;
+}
+.inGroup input {
+  width: 50%;
+}

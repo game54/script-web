@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main">
+      <div>
+        <p>1. XML Profile Fight back:</p>
+        <input type="text" id="profile1" placeholder="username.xml" />
+      </div>
+      <div>
+        <p>2. XML Profile Active:</p>
+        <input type="text" id="profile2" placeholder="username.xml" />
+      </div>
+      <div>
+        <p>3. GamePath:</p>
+        <input
+          type="text"
+          id="gamepath"
+          placeholder="C:\Lineage2\system\l2.exe"
+        />
+      </div>
+      <div>
+        <p>4. Username:</p>
+        <input type="text" id="user" placeholder="Account Username" />
+      </div>
+
+      <div>
+        <p>5. Password:</p>
+        <input type="text" id="password" placeholder="Account Password" />
+      </div>
+      <div>
+        <p>
+          6. LoadMAP(Load an already saved map for the hunting grounds farm):
+        </p>
+        <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
+      </div>
+      <div class="grouped">
+        <div>
+          <p>7. Gatekeeper NPC-ID:</p>
+          <input type="text" id="gkid" placeholder="31275" />
+        </div>
+        <div class="inGroup">
+          <p>
+            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
+          </p>
+          <input type="text" id="gkpath1" placeholder="Teleport" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath2" placeholder="Ketra Orc Outpost" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath3" placeholder="Fill if needed" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath4" placeholder="Fill if needed" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath5" placeholder="Fill if needed" />
+        </div>
+      </div>
+
+      <div class="onoff">
+        <div class="mp">
+          <p>BUY MP:</p>
+          <input type="radio" class="html" name="mp" value="1" /><span
+            class="onoffspan"
+            >ON</span
+          >
+          <input type="radio" class="html" name="mp" value="0" checked /><span
+            class="onoffspan"
+            >OFF</span
+          >
+        </div>
+
+        <div class="bss">
+          <p>BUY BSS:</p>
+          <input type="radio" class="html2" name="bss" value="1" /><span
+            class="onoffspan"
+            >ON</span
+          >
+          <input type="radio" class="html2" name="bss" value="0" checked /><span
+            class="onoffspan"
+            >OFF</span
+          >
+        </div>
+      </div>
+      <div>
+        <input
+          type="button"
+          id="bt"
+          value="Save data to file"
+          onclick="saveFile()"
+        />
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
