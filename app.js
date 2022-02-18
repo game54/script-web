@@ -4,6 +4,7 @@ const gktownpath = document.querySelectorAll(".gktownpath");
 const gmshop = document.querySelectorAll(".gmshop");
 const gkidziggurat = document.getElementById("gkidziggurat");
 const gkzigguratpath = document.querySelectorAll(".gkzigguratpath");
+const bufferid = document.getElementById("bufferid");
 
 let mp_radio;
 let gktown_radio;
@@ -74,6 +75,13 @@ let saveFile = () => {
   const mpvalue = document.getElementById("mpvalue");
   const bssid = document.getElementById("bssid");
   const bssvalue = document.getElementById("bssvalue");
+  const buff1 = document.getElementById("buff1");
+  const buff2 = document.getElementById("buff2");
+  const buff3 = document.getElementById("buff3");
+  const buff4 = document.getElementById("buff4");
+  const buff5 = document.getElementById("buff5");
+  const buff6 = document.getElementById("buff6");
+  const buff7 = document.getElementById("buff7");
 
   // This variable stores all the data.
   let data = `1)XML Profile Fight back:
@@ -119,15 +127,15 @@ ${gkidzigguratpath1.value || "empty"}
 ${gkidzigguratpath2.value || "empty"}
 ------------------------------------------------------------------------------------------------
 13)BUFFER-ID:
-32327
+${bufferid.value || "empty"}
 14) BUFFS-PICKUP[7]:
-Restore
-acumen
-empower
-cancel
-acumen
-shield
-cancel
+${buff1.value || empty}
+${buff2.value || empty}
+${buff3.value || empty}
+${buff4.value || empty}
+${buff5.value || empty}
+${buff6.value || empty}
+${buff7.value || empty}
 ---------------------------------------------------------------------
 15) BUFFS BYPASS INSTEAD OF PICKUP ON/OFF.
 1
