@@ -5,10 +5,18 @@ const gmshop = document.querySelectorAll(".gmshop");
 const gkidziggurat = document.getElementById("gkidziggurat");
 const gkzigguratpath = document.querySelectorAll(".gkzigguratpath");
 const bufferid = document.getElementById("bufferid");
+const buffs = document.querySelectorAll(".buffs");
+const bufferbypassid = document.getElementById("bufferbypassid");
+const buffsbypass = document.querySelectorAll(".buffsbypass");
+const bufferbypassaltb = document.querySelectorAll(".bufferbypassaltb_radio");
 
 let mp_radio;
 let gktown_radio;
 let gkziggurat_radio;
+let bufferbypass_radio;
+let autologin_radio;
+let randommove_radio;
+let bufferbypassaltb_radio;
 
 // BUY MP / BSS RADIO
 document.querySelectorAll(".mp_radio").forEach((check) => {
@@ -47,6 +55,59 @@ document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
     });
   });
 });
+// BUFFER BYPASS
+document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
+  check.addEventListener("change", function (e) {
+    bufferbypass_radio = e.target.value;
+    bufferid.value = 0;
+    if (bufferbypassid.disabled != false) {
+      bufferbypassid.disabled = false;
+      bufferid.disabled = true;
+    } else {
+      bufferbypassid.disabled = true;
+      bufferid.disabled = false;
+    }
+    buffsbypass.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+      buffs.forEach((each) => {
+        each.value = "empty";
+        each.disabled != false
+          ? (each.disabled = false)
+          : (each.disabled = true);
+      });
+      bufferbypassaltb.forEach((each) => {
+        each.disabled != false
+          ? (each.disabled = false)
+          : (each.disabled = true);
+      });
+    });
+  });
+});
+
+// AUTO-Login
+document.querySelectorAll(".autologin_radio").forEach((check) => {
+  check.addEventListener("change", function (e) {
+    autologin_radio = e.target.value;
+    // gkidziggurat.disabled != false
+    //   ? (gkidziggurat.disabled = false)
+    //   : (gkidziggurat.disabled = true);
+    // gkzigguratpath.forEach((each) => {
+    //   each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    // });
+  });
+});
+// Random Movement
+document.querySelectorAll(".randommove_radio").forEach((check) => {
+  check.addEventListener("change", function (e) {
+    randommove_radio = e.target.value;
+  });
+});
+// ALT+B BYPASS
+bufferbypassaltb.forEach((check) => {
+  check.addEventListener("change", function (e) {
+    bufferbypassaltb_radio = e.target.value;
+  });
+});
 
 let saveFile = () => {
   // Get the data from each element on the form.
@@ -82,6 +143,13 @@ let saveFile = () => {
   const buff5 = document.getElementById("buff5");
   const buff6 = document.getElementById("buff6");
   const buff7 = document.getElementById("buff7");
+  const buffbypass1 = document.getElementById("buffbypass1");
+  const buffbypass2 = document.getElementById("buffbypass2");
+  const buffbypass3 = document.getElementById("buffbypass3");
+  const buffbypass4 = document.getElementById("buffbypass4");
+  const buffbypass5 = document.getElementById("buffbypass5");
+  const buffbypass6 = document.getElementById("buffbypass6");
+  const buffbypass7 = document.getElementById("buffbypass7");
 
   // This variable stores all the data.
   let data = `1)XML Profile Fight back:
@@ -97,13 +165,13 @@ ${gamepath.value || "empty"}
 ${userName.value || "empty"}
 ------------------------------------------------------------------------------------------------
 5)pass:
-${password.value || "empty"}
+${password.value || 0}
 ------------------------------------------------------------------------------------------------
 6)LoadMap:
 ${loadMap.value || "empty"}
 ------------------------------------------------------------------------------------------------
 7)GK-ID(TELEPORT TO HUNTING GROUNDS):
-${gkId.value || "empty"}
+${gkId.value || 0}
 8)TeleportPath[5]:
 ${gkpath1.value || "empty"}
 ${gkpath2.value || "empty"}
@@ -112,7 +180,7 @@ ${gkpath4.value || "empty"}
 ${gkpath5.value || "empty"}
 ------------------------------------------------------------------------------------------------
 9)GK-ID2(FROM TOWN TO TOWN), OPTIONAL: e.g If you die in varka and spawn giran you want to return goddard and then tp hunting grounds.
-${gkidtown.value || "empty"}
+${gkidtown.value || 0}
 10)Teleportpath2[5](Use 9999 if not used):
 ${gktownpath1.value || "empty"}
 ${gktownpath2.value || "empty"}
@@ -121,53 +189,53 @@ ${gktownpath4.value || "empty"}
 ${gktownpath5.value || "empty"}
 ------------------------------------------------------------------------------------------------
 11)GK-ID3 ZIGGURAT(TELEPORT BETWEEN PATHS-EG. ZIGGURAT@catacombs) OPTIONAL:
-${gkidziggurat.value || "empty"}
+${gkidziggurat.value || 0}
 12)Teleportpath3[2]:
 ${gkidzigguratpath1.value || "empty"}
 ${gkidzigguratpath2.value || "empty"}
 ------------------------------------------------------------------------------------------------
 13)BUFFER-ID:
-${bufferid.value || "empty"}
+${bufferid.value || 0}
 14) BUFFS-PICKUP[7]:
-${buff1.value || empty}
-${buff2.value || empty}
-${buff3.value || empty}
-${buff4.value || empty}
-${buff5.value || empty}
-${buff6.value || empty}
-${buff7.value || empty}
+${buff1.value || "empty"}
+${buff2.value || "empty"}
+${buff3.value || "empty"}
+${buff4.value || "empty"}
+${buff5.value || "empty"}
+${buff6.value || "empty"}
+${buff7.value || "empty"}
 ---------------------------------------------------------------------
 15) BUFFS BYPASS INSTEAD OF PICKUP ON/OFF.
-1
+${bufferbypass_radio || 0}
 14)BUFFS-BYPASS[7]: USING BYPASS METHOD. MAX 7 LINES - NO BLANKS/SPACES.
-_bbs_buffer_um?name=mage_prem&pre=1&target=Player
-_bbs_buffer_bp?skill=22872065
-_bbs_buffer_bp?skill=89325569
-_bbs_buffer_bp?skill=89325569
-_bbs_buffer_bp?skill=89325569
-_bbs_buffer_bp?skill=92602369
-_bbs_buffer_bp?skill=92602369
+${buffbypass1.value || "empty"}
+${buffbypass2.value || "empty"}
+${buffbypass3.value || "empty"}
+${buffbypass4.value || "empty"}
+${buffbypass5.value || "empty"}
+${buffbypass6.value || "empty"}
+${buffbypass7.value || "empty"}
 ------------------------------------------------------------------------------------------------
 15) BUYMP & BSS   ----   ON/OFF 1=ON , 0=OFF 
 ${mp_radio || 0}
 16) GM SHOP ID:
-${gmshopid.value || "empty"}
+${gmshopid.value || 0}
 17) MP Buy TAB @GmSHOP
 ${mptab.value || "empty"}
 18) Bss Buy TAB @GmSHOP
 ${bsstab.value || "empty"}
 19) Mana potion ID - (usually:726/725/728) and Value(how many)
-${mpid.value || "empty"}
-${mpvalue.value || "empty"}
+${mpid.value || 0}
+${mpvalue.value || 0}
 20) Spiritshot ID - (default:: BssB:3950,BssA:3951,BssS:3952 , ssS:1467) and value
-${bssid.value || "empty"}
-${bssvalue.value || "empty"}
+${bssid.value || 0}
+${bssvalue.value || 0}
 --------------------------------------------------------------------------------------------------
 21) Auto-Login ON:1 , OFF:0
-0
+${autologin_radio || 0}
 --------------------------------------------------------------------------------------------------
 22) Random movement while hitting mobs ON:1 , OFF:0
-1
+${randommove_radio || 0}
 --------------------------------------------------------------------------------------------------
 23) GK2(town to town) ON/OFF
 ${gktown_radio || 0}
@@ -178,7 +246,7 @@ ${gkziggurat_radio || 0}
                                    ALT+B SETTINGS
 If you enable alt+b settings all previous teleports,buffers are automatic disabled.
 25) ENABLE ALT+B ON:1 , OFF:0
-1
+${bufferbypassaltb_radio || 0}
 --------------------------------------------------------------------------------------------------
 26) TELEPORT[5]:
 Empty - Fill if needed
