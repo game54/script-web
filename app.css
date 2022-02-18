@@ -48,6 +48,11 @@ input[type="radio"] {
   padding: 0.5rem;
 }
 
+input[type="text"]:disabled {
+  background: #aaa;
+  transition: 0.3s;
+}
+
 .main {
   width: 50%;
   margin: 0 auto;
