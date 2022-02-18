@@ -9,14 +9,17 @@
   </head>
   <body>
     <main class="main">
+      <!-- PROFILE 1 -->
       <div>
         <p>1. XML Profile Fight back:</p>
         <input type="text" id="profile1" placeholder="username.xml" />
       </div>
+      <!-- PROFILE 2 -->
       <div>
         <p>2. XML Profile Active:</p>
         <input type="text" id="profile2" placeholder="username.xml" />
       </div>
+      <!-- GAMEPATH -->
       <div>
         <p>3. GamePath:</p>
         <input
@@ -25,21 +28,24 @@
           placeholder="C:\Lineage2\system\l2.exe"
         />
       </div>
+      <!-- USERNAME -->
       <div>
         <p>4. Username:</p>
         <input type="text" id="user" placeholder="Account Username" />
       </div>
-
+      <!-- PASSWORD -->
       <div>
         <p>5. Password:</p>
         <input type="text" id="password" placeholder="Account Password" />
       </div>
+      <!-- LOAD MAP -->
       <div>
         <p>
           6. LoadMAP(Load an already saved map for the hunting grounds farm):
         </p>
         <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
       </div>
+      <!-- GK HUNTING GROUNDS + TP PATH -->
       <div class="grouped">
         <div>
           <p>7. Gatekeeper NPC-ID:</p>
@@ -64,36 +70,210 @@
           <input type="text" id="gkpath5" placeholder="Fill if needed" />
         </div>
       </div>
-
-      <div class="onoff">
-        <div class="mp">
-          <p>BUY MP & Spiritshot:</p>
-          <input type="radio" class="html" name="mp" value="1" /><span
-            class="onoffspan"
-            >ON</span
-          >
-          <input type="radio" class="html" name="mp" value="0" checked /><span
-            class="onoffspan"
-            >OFF</span
-          >
+      <!-- BUY MP/BSS RADIO + GMSHOP -->
+      <div class="grouped">
+        <div class="onoff">
+          <div class="mp">
+            <p>BUY MP & Spiritshot:</p>
+            <input type="radio" class="mp_radio" name="mp" value="1" /><span
+              class="onoffspan"
+              >ON</span
+            >
+            <input
+              type="radio"
+              class="mp_radio"
+              name="mp"
+              value="0"
+              checked
+            /><span class="onoffspan">OFF</span>
+          </div>
         </div>
-
-        <!-- <div class="bss">
-          <p>BUY BSS:</p>
-          <input type="radio" class="html2" name="bss" value="1" /><span
-            class="onoffspan"
-            >ON</span
-          >
-          <input type="radio" class="html2" name="bss" value="0" checked /><span
-            class="onoffspan"
-            >OFF</span
-          >
-        </div> -->
+        <div>
+          <p>7. GMSHOP NPC-ID:</p>
+          <input type="text" id="gmshopid" placeholder="31233" disabled />
+        </div>
+        <div>
+          <p>7. MP Buy TAB @GmSHOP:</p>
+          <input
+            type="text"
+            id="mptab"
+            class="gmshop"
+            placeholder="misc"
+            disabled
+          />
+        </div>
+        <div>
+          <p>7. BSS Buy TAB @GmSHOP:</p>
+          <input
+            type="text"
+            id="bsstab"
+            class="gmshop"
+            placeholder="consumables"
+            disabled
+          />
+        </div>
+        <div>
+          <p>7. Mana potion ID (usually:726/725/728) and Value(how many):</p>
+          <input
+            type="text"
+            id="mpid"
+            class="gmshop"
+            placeholder="726"
+            disabled
+          />
+          <input
+            type="text"
+            id="mpvalue"
+            class="gmshop"
+            placeholder="2000"
+            disabled
+          />
+        </div>
+        <div>
+          <p>
+            7. Spiritshot ID - (default:: BssB:3950,BssA:3951,BssS:3952 ,
+            ssS:1467) and value:
+          </p>
+          <input
+            type="text"
+            id="bssid"
+            class="gmshop"
+            placeholder="3952"
+            disabled
+          />
+          <input
+            type="text"
+            id="bssvalue"
+            class="gmshop"
+            placeholder="2000"
+            disabled
+          />
+        </div>
       </div>
-      <div>
-        <p>7. Buffer NPC-ID:</p>
-        <input type="text" id="bufferid" placeholder="31233" disabled />
+      <!-- GK TOWN TO TOWN + PATH -->
+      <div class="grouped">
+        <div class="onoff">
+          <div class="gktown">
+            <p>
+              GK-ID(TELEPORT FROM TOWN TO TOWN), OPTIONAL: e.g If you die in
+              varka and spawn giran you want to return goddard and then tp
+              hunting grounds.:
+            </p>
+            <input
+              type="radio"
+              class="gktown_radio"
+              name="gktown"
+              value="1"
+            /><span class="onoffspan">ON</span>
+            <input
+              type="radio"
+              class="gktown_radio"
+              name="gktown"
+              value="0"
+              checked
+            /><span class="onoffspan">OFF</span>
+          </div>
+        </div>
+        <div>
+          <p>9.GK-ID(TELEPORT FROM TOWN TO TOWN)</p>
+          <input type="text" id="gkidtown" placeholder="31233" disabled />
+        </div>
+        <div class="inGroup">
+          <p>
+            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
+          </p>
+          <input
+            type="text"
+            id="gktownpath1"
+            class="gktownpath"
+            placeholder="Teleport"
+            disabled
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="gktownpath2"
+            class="gktownpath"
+            placeholder="Goddard"
+            disabled
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="gktownpath3"
+            class="gktownpath"
+            placeholder="Aden - 65000 adena"
+            disabled
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="gktownpath4"
+            class="gktownpath"
+            placeholder="Fill if needed"
+            disabled
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="gktownpath5"
+            class="gktownpath"
+            placeholder="Fill if needed"
+            disabled
+          />
+        </div>
       </div>
+      <!-- GK ZIGGURAT -->
+      <div class="grouped">
+        <div class="onoff">
+          <div class="gkziggurat">
+            <p>
+              GK ZIGGURAT(TELEPORT BETWEEN PATHS-EG. ZIGGURAT@catacombs) OPTIONAL:
+            </p>
+            <input
+              type="radio"
+              class="gkziggurat_radio"
+              name="gkziggurat"
+              value="1"
+            /><span class="onoffspan">ON</span>
+            <input
+              type="radio"
+              class="gkziggurat_radio"
+              name="gkziggurat"
+              value="0"
+              checked
+            /><span class="onoffspan">OFF</span>
+          </div>
+        </div>
+        <div>
+          <p>9.GK-ID(TELEPORT BETWEEN PATHS)</p>
+          <input type="text" id="gkidziggurat" placeholder="31119" disabled />
+        </div>
+        <div class="inGroup">
+          <p>
+            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
+          </p>
+          <input
+            type="text"
+            id="gkidzigguratpath1"
+            class="gkzigguratpath"
+            placeholder="Enter Catacomb"
+            disabled
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="gkidzigguratpath2"
+            class="gkzigguratpath"
+            placeholder="Fill if needed"
+            disabled
+          />
+        </div>
       <div>
         <input
           type="button"
