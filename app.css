@@ -24,7 +24,7 @@ div {
 }
 
 p {
-  padding: 0.5rem;
+  padding: 0.5rem 0rem;
 }
 
 input[type="text"],
@@ -63,7 +63,7 @@ input[type="radio"] {
 
 .grouped {
   border: 5px solid #222;
-  padding: 0.2rem;
+  padding: 0.2rem 1rem;
   /* background-color: #222; */
 }
 

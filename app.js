@@ -1,14 +1,17 @@
+const bufferid = document.getElementById("bufferid");
+
 let html;
 let html2;
 document.querySelectorAll(".html").forEach((check) => {
   check.addEventListener("change", function (e) {
-    console.log(e.target.value);
     html = e.target.value;
+    bufferid.disabled != false
+      ? (bufferid.disabled = false)
+      : (bufferid.disabled = true);
   });
 });
 document.querySelectorAll(".html2").forEach((check) => {
   check.addEventListener("change", function (e) {
-    console.log(e.target.value);
     html2 = e.target.value;
   });
 });
