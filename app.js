@@ -9,6 +9,8 @@ const buffs = document.querySelectorAll(".buffs");
 const bufferbypassid = document.getElementById("bufferbypassid");
 const buffsbypass = document.querySelectorAll(".buffsbypass");
 const bufferbypassaltb = document.querySelectorAll(".bufferbypassaltb_radio");
+const starttimerboth = document.querySelectorAll(".starttimerboth");
+const autologindisabled = document.querySelectorAll(".autologindisabled");
 
 let mp_radio;
 let gktown_radio;
@@ -17,6 +19,9 @@ let bufferbypass_radio;
 let autologin_radio;
 let randommove_radio;
 let bufferbypassaltb_radio;
+let huntingrebuff_radio;
+let soeiflow_radio;
+let starttimer_radio;
 
 // BUY MP / BSS RADIO
 document.querySelectorAll(".mp_radio").forEach((check) => {
@@ -88,12 +93,9 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
 document.querySelectorAll(".autologin_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
     autologin_radio = e.target.value;
-    // gkidziggurat.disabled != false
-    //   ? (gkidziggurat.disabled = false)
-    //   : (gkidziggurat.disabled = true);
-    // gkzigguratpath.forEach((each) => {
-    //   each.disabled != false ? (each.disabled = false) : (each.disabled = true);
-    // });
+    autologindisabled.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    });
   });
 });
 // Random Movement
@@ -106,6 +108,28 @@ document.querySelectorAll(".randommove_radio").forEach((check) => {
 bufferbypassaltb.forEach((check) => {
   check.addEventListener("change", function (e) {
     bufferbypassaltb_radio = e.target.value;
+  });
+});
+
+// Hunting grounds rebuff
+document.querySelectorAll(".huntingrebuff_radio").forEach((check) => {
+  check.addEventListener("change", function (e) {
+    huntingrebuff_radio = e.target.value;
+  });
+});
+// Soe if mana is low
+document.querySelectorAll(".soeiflow_radio").forEach((check) => {
+  check.addEventListener("change", function (e) {
+    soeiflow_radio = e.target.value;
+  });
+});
+// System 24h timer
+document.querySelectorAll(".starttimer_radio").forEach((check) => {
+  check.addEventListener("change", function (e) {
+    starttimer_radio = e.target.value;
+    starttimerboth.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    });
   });
 });
 
@@ -150,6 +174,8 @@ let saveFile = () => {
   const buffbypass5 = document.getElementById("buffbypass5");
   const buffbypass6 = document.getElementById("buffbypass6");
   const buffbypass7 = document.getElementById("buffbypass7");
+  const starttimerhour = document.getElementById("starttimerhour");
+  const starttimermin = document.getElementById("starttimermin");
 
   // This variable stores all the data.
   let data = `1)XML Profile Fight back:
@@ -249,34 +275,34 @@ If you enable alt+b settings all previous teleports,buffers are automatic disabl
 ${bufferbypassaltb_radio || 0}
 --------------------------------------------------------------------------------------------------
 26) TELEPORT[5]:
-Empty - Fill if needed
-Empty - Fill if needed
-Empty - Fill if needed
-Empty - Fill if needed
-Empty - Fill if needed
+${gkpath1.value || "empty"}
+${gkpath2.value || "empty"}
+${gkpath3.value || "empty"}
+${gkpath4.value || "empty"}
+${gkpath5.value || "empty"}
 --------------------------------------------------------------------------------------------------
 27) BUFFS[8]:
-_bbs_buffer_um?name=mage_prem&pre=1&target=Player
-_bbs_buffer_bp?skill=92602369
-_bbs_buffer_bp?skill=91553795
-_bbs_buffer_bp?skill=71106563
-_bbs_buffer_bp?skill=69402627
-_bbs_buffer_bp?skill=78905346
-_bbs_buffer_bp?skill=23789569
+${buffbypass1.value || "empty"}
+${buffbypass2.value || "empty"}
+${buffbypass3.value || "empty"}
+${buffbypass4.value || "empty"}
+${buffbypass5.value || "empty"}
+${buffbypass6.value || "empty"}
+${buffbypass7.value || "empty"}
 _bbs_buffer_bp?skill=78905346
 --------------------------------------------------------------------------------------------------
 28)Hunting grounds rebuff, no soe. [Buffbook on f12] ---- ON/OFF 1=ON , 0=OFF 
-0
+${huntingrebuff_radio || 0}
 --------------------------------------------------------------------------------------------------
 29)Soe if bss/ss-mana pot is low  ---- ON/OFF 1=ON , 0=OFF [NOT WORKING PROPERLY ATM. Problem found at While after rebuff]
-1
+${soeiflow_radio || 0}
 --------------------------------------------------------------------------------------------------
 30)Set Script's Start time using 24h system and minutes also(1-24h and 1-59minutes). ---- ON/OFF 1=ON , 0=OFF 
-1
+${starttimer_radio || 0}
 Set Hours:
-20
+${starttimerhour.value || "empty"}
 Set Minutes:
-0
+${starttimermin.value || "empty"}
 ======================================NO BLANKS/SPACES. DO NOT DELETE LINES============================================================`;
 
   // Convert the text to BLOB.

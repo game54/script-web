@@ -19,31 +19,67 @@
         <p>2. XML Profile Active:</p>
         <input type="text" id="profile2" placeholder="username.xml" />
       </div>
-      <!-- GAMEPATH -->
-      <div>
-        <p>3. GamePath:</p>
-        <input
-          type="text"
-          id="gamepath"
-          placeholder="C:\Lineage2\system\l2.exe"
-        />
-      </div>
-      <!-- USERNAME -->
-      <div>
-        <p>4. Username:</p>
-        <input type="text" id="user" placeholder="Account Username" />
-      </div>
-      <!-- PASSWORD -->
-      <div>
-        <p>5. Password:</p>
-        <input type="text" id="password" placeholder="Account Password" />
-      </div>
       <!-- LOAD MAP -->
       <div>
         <p>
           6. LoadMAP(Load an already saved map for the hunting grounds farm):
         </p>
         <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
+      </div>
+
+      <div class="grouped">
+        <!-- AUTOLOGIN -->
+        <div class="onoff">
+          <div class="autologin">
+            <p>Auto-login:</p>
+            <input
+              type="radio"
+              class="autologin_radio"
+              name="autologin"
+              value="1"
+            /><span class="onoffspan">ON</span>
+            <input
+              type="radio"
+              class="autologin_radio"
+              name="autologin"
+              value="0"
+              checked
+            /><span class="onoffspan">OFF</span>
+          </div>
+        </div>
+        <!-- USERNAME -->
+        <div>
+          <p>4. Username:</p>
+          <input
+            type="text"
+            id="user"
+            class="autologindisabled"
+            placeholder="Account Username"
+            disabled
+          />
+        </div>
+        <!-- PASSWORD -->
+        <div>
+          <p>5. Password:</p>
+          <input
+            type="text"
+            id="password"
+            class="autologindisabled"
+            placeholder="Account Password"
+            disabled
+          />
+        </div>
+        <!-- GAMEPATH -->
+        <div>
+          <p>3. GamePath:</p>
+          <input
+            type="text"
+            id="gamepath"
+            class="autologindisabled"
+            placeholder="C:\Lineage2\system\l2.exe"
+            disabled
+          />
+        </div>
       </div>
       <!-- GK HUNTING GROUNDS + TP PATH -->
       <div class="grouped">
@@ -439,40 +475,105 @@
           />
         </div>
       </div>
+      <!-- RANDOM MOVEMENTS -->
       <div class="onoff">
-        <div class="autologin">
-          <p>Auto-login:</p>
+        <div class="randommove">
+          <p>Random movements while hitting mobs:</p>
           <input
             type="radio"
-            class="autologin_radio"
-            name="autologin"
+            class="randommove_radio"
+            name="randommove"
             value="1"
           /><span class="onoffspan">ON</span>
           <input
             type="radio"
-            class="autologin_radio"
-            name="autologin"
+            class="randommove_radio"
+            name="randommove"
             value="0"
             checked
           /><span class="onoffspan">OFF</span>
         </div>
       </div>
+      <!-- HUNTING GROUNDS REBUFF -->
       <div class="onoff">
-        <div class="randommove">
-          <p>Auto-login:</p>
+        <div class="huntingrebuff">
+          <p>Hunting grounds rebuff, no soe. [Buffbook on f12]:</p>
           <input
             type="radio"
-            class="randommove_radio"
-            name="randommove"
+            class="huntingrebuff_radio"
+            name="huntingrebuff"
             value="1"
           /><span class="onoffspan">ON</span>
           <input
             type="radio"
-            class="randommove_radio"
-            name="randommove"
+            class="huntingrebuff_radio"
+            name="huntingrebuff"
             value="0"
             checked
           /><span class="onoffspan">OFF</span>
+        </div>
+      </div>
+      <!-- SOE IF MANA IS LOW -->
+      <div class="onoff">
+        <div class="soeiflow">
+          <p>Soe if bss/ss-mana pot is low :</p>
+          <input
+            type="radio"
+            class="soeiflow_radio"
+            name="soeiflow"
+            value="1"
+          /><span class="onoffspan">ON</span>
+          <input
+            type="radio"
+            class="soeiflow_radio"
+            name="soeiflow"
+            value="0"
+            checked
+          /><span class="onoffspan">OFF</span>
+        </div>
+      </div>
+      <!-- 24H START SCRIPT TIMER -->
+      <div class="grouped">
+        <div class="onoff">
+          <div class="starttimer">
+            <p>
+              Set Script's Start time using 24h system and minutes also(1-24h
+              and 1-59minutes):
+            </p>
+            <input
+              type="radio"
+              class="starttimer_radio"
+              name="starttimer"
+              value="1"
+            /><span class="onoffspan">ON</span>
+            <input
+              type="radio"
+              class="starttimer_radio"
+              name="starttimer"
+              value="0"
+              checked
+            /><span class="onoffspan">OFF</span>
+          </div>
+        </div>
+        <div>
+          <p>9. Set Hours:</p>
+          <input
+            type="text"
+            id="starttimerhour"
+            class="starttimerboth"
+            placeholder="20"
+            disabled
+          />
+        </div>
+        <div>
+          <p>9. Set Minutes:</p>
+          <input
+            type="text"
+            id="starttimermin"
+            class="starttimerboth"
+            placeholder="0"
+            disabled
+          />
         </div>
       </div>
       <div>
