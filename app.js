@@ -11,6 +11,12 @@ const buffsbypass = document.querySelectorAll(".buffsbypass");
 const bufferbypassaltb = document.querySelectorAll(".bufferbypassaltb_radio");
 const starttimerboth = document.querySelectorAll(".starttimerboth");
 const autologindisabled = document.querySelectorAll(".autologindisabled");
+const bufferbypassaltb_radio_id1 = document.getElementById(
+  "bufferbypassaltb_radio_id1"
+);
+const bufferbypassaltb_radio_id2 = document.getElementById(
+  "bufferbypassaltb_radio_id2"
+);
 
 let mp_radio;
 let gktown_radio;
@@ -64,7 +70,7 @@ document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
 document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
     bufferbypass_radio = e.target.value;
-    bufferid.value = 0;
+    // bufferid.value = 0;
     if (bufferbypassid.disabled != false) {
       bufferbypassid.disabled = false;
       bufferid.disabled = true;
@@ -72,10 +78,17 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
       bufferbypassid.disabled = true;
       bufferid.disabled = false;
     }
+    if (bufferbypass_radio == 0) bufferbypassid.disabled = true;
+    if (bufferbypass_radio == 1 && bufferbypassaltb_radio == 1)
+      bufferbypassid.disabled = true;
+    // if (bufferbypass_radio == 0) {
+    //   bufferbypassaltb_radio_id1.checked = false;
+    //   bufferbypassaltb_radio_id2.checked = true;
+    // }
     buffsbypass.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
       buffs.forEach((each) => {
-        each.value = "empty";
+        // each.value = "empty";
         each.disabled != false
           ? (each.disabled = false)
           : (each.disabled = true);
@@ -92,7 +105,8 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
 // AUTO-Login
 document.querySelectorAll(".autologin_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
-    autologin_radio = e.target.value;
+    e.target.value == 0 ? (autologin_radio = 1) : (autologin_radio = 0);
+    // autologin_radio = e.target.value;
     autologindisabled.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -108,6 +122,12 @@ document.querySelectorAll(".randommove_radio").forEach((check) => {
 bufferbypassaltb.forEach((check) => {
   check.addEventListener("change", function (e) {
     bufferbypassaltb_radio = e.target.value;
+    if (bufferbypassaltb_radio == 1) bufferbypassid.disabled = true;
+    if (bufferbypassaltb_radio == 0) bufferbypassid.disabled = false;
+
+    // bufferbypassid.disabled != false
+    //   ? (bufferbypassid.disabled = false)
+    //   : (bufferbypassid.disabled = true);
   });
 });
 

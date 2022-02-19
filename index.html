@@ -26,13 +26,100 @@
         </p>
         <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
       </div>
-
+      <!-- BUFFER -->
+      <div class="grouped">
+        <div>
+          <p>9.BUFFER-ID:</p>
+          <input type="text" id="bufferid" placeholder="31222" />
+        </div>
+        <div class="inGroup">
+          <p>8. BUFFS - PICK:</p>
+          <input type="text" id="buff1" class="buffs" placeholder="Buffs" />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="buff2"
+            class="buffs"
+            placeholder="Mage buffs"
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="buff3"
+            class="buffs"
+            placeholder="Special Buffs"
+          />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="buff4" class="buffs" placeholder="Malaria" />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="buff5"
+            class="buffs"
+            placeholder="Fill if needed"
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="buff6"
+            class="buffs"
+            placeholder="Fill if needed"
+          />
+        </div>
+        <div class="inGroup">
+          <input
+            type="text"
+            id="buff7"
+            class="buffs"
+            placeholder="Fill if needed"
+          />
+        </div>
+      </div>
+      <!-- GK HUNTING GROUNDS + TP PATH -->
+      <div class="grouped">
+        <div>
+          <p>7. Gatekeeper NPC-ID:</p>
+          <input type="text" id="gkid" placeholder="31275" />
+        </div>
+        <div class="inGroup">
+          <p>
+            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
+          </p>
+          <input type="text" id="gkpath1" placeholder="Teleport" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath2" placeholder="Ketra Orc Outpost" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath3" placeholder="Fill if needed" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath4" placeholder="Fill if needed" />
+        </div>
+        <div class="inGroup">
+          <input type="text" id="gkpath5" placeholder="Fill if needed" />
+        </div>
+      </div>
       <div class="grouped">
         <!-- AUTOLOGIN -->
         <div class="onoff">
           <div class="autologin">
             <p>Auto-login:</p>
-            <input
+            <label class="switch">
+              <input
+                type="checkbox"
+                class="autologin_radio"
+                name="autologin"
+                value="0"
+              />
+              <span class="slider round"></span>
+            </label>
+            <!-- <input
               type="radio"
               class="autologin_radio"
               name="autologin"
@@ -44,7 +131,7 @@
               name="autologin"
               value="0"
               checked
-            /><span class="onoffspan">OFF</span>
+            /><span class="onoffspan">OFF</span> -->
           </div>
         </div>
         <!-- USERNAME -->
@@ -79,31 +166,6 @@
             placeholder="C:\Lineage2\system\l2.exe"
             disabled
           />
-        </div>
-      </div>
-      <!-- GK HUNTING GROUNDS + TP PATH -->
-      <div class="grouped">
-        <div>
-          <p>7. Gatekeeper NPC-ID:</p>
-          <input type="text" id="gkid" placeholder="31275" />
-        </div>
-        <div class="inGroup">
-          <p>
-            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
-          </p>
-          <input type="text" id="gkpath1" placeholder="Teleport" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath2" placeholder="Ketra Orc Outpost" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath3" placeholder="Fill if needed" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath4" placeholder="Fill if needed" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath5" placeholder="Fill if needed" />
         </div>
       </div>
       <!-- BUY MP/BSS RADIO + GMSHOP -->
@@ -312,60 +374,6 @@
           />
         </div>
       </div>
-      <!-- BUFFER -->
-      <div class="grouped">
-        <div>
-          <p>9.BUFFER-ID:</p>
-          <input type="text" id="bufferid" placeholder="31222" />
-        </div>
-        <div class="inGroup">
-          <p>8. BUFFS - PICK:</p>
-          <input type="text" id="buff1" class="buffs" placeholder="Buffs" />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff2"
-            class="buffs"
-            placeholder="Mage buffs"
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff3"
-            class="buffs"
-            placeholder="Special Buffs"
-          />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="buff4" class="buffs" placeholder="Malaria" />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff5"
-            class="buffs"
-            placeholder="Fill if needed"
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff6"
-            class="buffs"
-            placeholder="Fill if needed"
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff7"
-            class="buffs"
-            placeholder="Fill if needed"
-          />
-        </div>
-      </div>
       <!-- BUFFER BYPASSING -->
       <div class="grouped">
         <div class="onoff">
@@ -391,6 +399,7 @@
             <p>ALT+B BUFFS:</p>
             <input
               type="radio"
+              id="bufferbypassaltb_radio_id1"
               class="bufferbypassaltb_radio"
               name="bufferbypassaltb"
               value="1"
@@ -398,6 +407,7 @@
             /><span class="onoffspan">ON</span>
             <input
               type="radio"
+              id="bufferbypassaltb_radio_id2"
               class="bufferbypassaltb_radio"
               name="bufferbypassaltb"
               value="0"
