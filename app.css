@@ -16,12 +16,12 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
     url(elf.webp);
   background-size: cover;
-  background-position: center;
+  background-position: -10rem;
   color: #fff;
 }
 
 ::placeholder {
-  color: #333;
+  color: #aaa;
 }
 ::placeholder:disabled {
   color: #fff;

@@ -84,9 +84,10 @@ document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
 // BUFFER BYPASS
 document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
-    // If checkbox is on value = 1 if off value =0
+    // If checkbox is on value = 1 if off value =0. Also resets buffer id value because in txt there is 1 input for buffer and bypass check line 280
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     bufferbypass_radio = e.target.value;
+    bufferid.value = "";
     //buffer on bypass mode id on change enabled/disbled
     //on change buffer/gk id enable/disable
     if (bufferbypassid.disabled != false) {
@@ -112,6 +113,7 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
       gkId.disabled = false;
     }
 
+    //disable/enable buffs/tps and staff
     buffsbypass.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -133,11 +135,10 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
 // AUTO-Login
 document.querySelectorAll(".autologin_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
-    // e.target.value != 0 ? (autologin_radio = 0) : (autologin_radio = 1);
+    // If checkbox is on value = 1 if off value =0.
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     autologin_radio = e.target.value;
-
-    // autologin_radio = e.target.value;
+    // autologin info enable/disable
     autologindisabled.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -146,6 +147,7 @@ document.querySelectorAll(".autologin_radio").forEach((check) => {
 // Random Movement
 document.querySelectorAll(".randommove_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0.
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     randommove_radio = e.target.value;
   });
@@ -153,19 +155,18 @@ document.querySelectorAll(".randommove_radio").forEach((check) => {
 // ALT+B BYPASS
 bufferbypassaltb.forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0.
     bufferbypassaltb_radio = e.target.value;
+    //if alt b radio 1 buffer npc by pass is disabled and vice verca
     if (bufferbypassaltb_radio == 1) bufferbypassid.disabled = true;
     if (bufferbypassaltb_radio == 0) bufferbypassid.disabled = false;
-
-    // bufferbypassid.disabled != false
-    //   ? (bufferbypassid.disabled = false)
-    //   : (bufferbypassid.disabled = true);
   });
 });
 
 // Hunting grounds rebuff
 document.querySelectorAll(".huntingrebuff_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0.
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     huntingrebuff_radio = e.target.value;
   });
@@ -173,6 +174,7 @@ document.querySelectorAll(".huntingrebuff_radio").forEach((check) => {
 // Soe if mana is low
 document.querySelectorAll(".soeiflow_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0.
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     soeiflow_radio = e.target.value;
   });
@@ -180,8 +182,10 @@ document.querySelectorAll(".soeiflow_radio").forEach((check) => {
 // System 24h timer
 document.querySelectorAll(".starttimer_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0.
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     starttimer_radio = e.target.value;
+    //enable disable start timer settings
     starttimerboth.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -280,7 +284,7 @@ ${gkidzigguratpath1.value || "empty"}
 ${gkidzigguratpath2.value || "empty"}
 ------------------------------------------------------------------------------------------------
 13)BUFFER-ID:
-${bufferid.value || 0}
+${bufferid.value || bufferbypassid.value}
 14) BUFFS-PICKUP[7]:
 ${buff1.value || "empty"}
 ${buff2.value || "empty"}
@@ -334,11 +338,11 @@ If you enable alt+b settings all previous teleports,buffers are automatic disabl
 ${bufferbypassaltb_radio || 0}
 --------------------------------------------------------------------------------------------------
 26) TELEPORT[5]:
-${gkpath1.value || "empty"}
-${gkpath2.value || "empty"}
-${gkpath3.value || "empty"}
-${gkpath4.value || "empty"}
-${gkpath5.value || "empty"}
+${tpbypass1.value || "empty"}
+${tpbypass2.value || "empty"}
+${tpbypass3.value || "empty"}
+${tpbypass4.value || "empty"}
+${tpbypass5.value || "empty"}
 --------------------------------------------------------------------------------------------------
 27) BUFFS[8]:
 ${buffbypass1.value || "empty"}
