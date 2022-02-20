@@ -82,6 +82,7 @@ input[type="text"]:disabled {
 
 .grouped {
   border: 2px solid #555;
+  border-radius: 4px;
   margin: 1rem;
   /* padding: 0.2rem 1rem; */
   /* background-color: #222; */
@@ -90,9 +91,9 @@ input[type="text"]:disabled {
 .inGroup {
   padding: 0.1rem 2rem;
 }
-.inGroup input {
+/* .inGroup input {
   width: 90%;
-}
+} */
 
 .bufftab {
   display: grid;
