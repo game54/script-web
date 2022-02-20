@@ -13,10 +13,16 @@ html {
 body {
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
     url(elf.webp);
   background-size: cover;
-  background-position: -10rem;
+  background-position: center; */
+  background: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
+    url(elf.webp) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: #fff;
 }
 
