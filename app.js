@@ -35,6 +35,7 @@ let starttimer_radio;
 // BUY MP / BSS RADIO
 document.querySelectorAll(".mp_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     mp_radio = e.target.value;
     gmshopid.disabled != false
       ? (gmshopid.disabled = false)
@@ -48,6 +49,7 @@ document.querySelectorAll(".mp_radio").forEach((check) => {
 // GK TOWN TO TOWN RADIO
 document.querySelectorAll(".gktown_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     gktown_radio = e.target.value;
     gkidtown.disabled != false
       ? (gkidtown.disabled = false)
@@ -60,6 +62,7 @@ document.querySelectorAll(".gktown_radio").forEach((check) => {
 // GK ZIGGURAT
 document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     gkziggurat_radio = e.target.value;
     gkidziggurat.disabled != false
       ? (gkidziggurat.disabled = false)
@@ -72,6 +75,7 @@ document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
 // BUFFER BYPASS
 document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     bufferbypass_radio = e.target.value;
     // bufferid.value = 0;
     if (bufferbypassid.disabled != false) {
@@ -139,6 +143,7 @@ document.querySelectorAll(".autologin_radio").forEach((check) => {
 // Random Movement
 document.querySelectorAll(".randommove_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     randommove_radio = e.target.value;
   });
 });
@@ -158,18 +163,21 @@ bufferbypassaltb.forEach((check) => {
 // Hunting grounds rebuff
 document.querySelectorAll(".huntingrebuff_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     huntingrebuff_radio = e.target.value;
   });
 });
 // Soe if mana is low
 document.querySelectorAll(".soeiflow_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     soeiflow_radio = e.target.value;
   });
 });
 // System 24h timer
 document.querySelectorAll(".starttimer_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     starttimer_radio = e.target.value;
     starttimerboth.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
