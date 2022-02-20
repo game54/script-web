@@ -5,121 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
     <main class="main">
-      <!-- PROFILE 1 -->
-      <div>
-        <p>1. XML Profile Fight back:</p>
-        <input type="text" id="profile1" placeholder="username.xml" />
-      </div>
-      <!-- PROFILE 2 -->
-      <div>
-        <p>2. XML Profile Active:</p>
-        <input type="text" id="profile2" placeholder="username.xml" />
-      </div>
-      <!-- LOAD MAP -->
-      <div>
-        <p>
-          6. LoadMAP(Load an already saved map for the hunting grounds farm):
-        </p>
-        <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
-      </div>
-      <!-- BUFFER -->
-      <div class="grouped">
-        <div>
-          <p>9.BUFFER-ID:</p>
-          <input type="text" id="bufferid" placeholder="31222" />
+      <div class="logintab">
+        <div class="grouped">
+          <!-- PROFILE 1 -->
+          <div>
+            <p>1. XML Profile Fight back:</p>
+            <input type="text" id="profile1" placeholder="username.xml" />
+          </div>
+          <!-- PROFILE 2 -->
+          <div>
+            <p>2. XML Profile Active:</p>
+            <input type="text" id="profile2" placeholder="username.xml" />
+          </div>
+          <!-- LOAD MAP -->
+          <div>
+            <p>
+              6. LoadMAP(Load an already saved map for the hunting grounds
+              farm):
+            </p>
+            <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
+          </div>
         </div>
-        <div class="inGroup">
-          <p>8. BUFFS - PICK:</p>
-          <input type="text" id="buff1" class="buffs" placeholder="Buffs" />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff2"
-            class="buffs"
-            placeholder="Mage buffs"
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff3"
-            class="buffs"
-            placeholder="Special Buffs"
-          />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="buff4" class="buffs" placeholder="Malaria" />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff5"
-            class="buffs"
-            placeholder="Fill if needed"
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff6"
-            class="buffs"
-            placeholder="Fill if needed"
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buff7"
-            class="buffs"
-            placeholder="Fill if needed"
-          />
-        </div>
-      </div>
-      <!-- GK HUNTING GROUNDS + TP PATH -->
-      <div class="grouped">
-        <div>
-          <p>7. Gatekeeper NPC-ID:</p>
-          <input type="text" id="gkid" placeholder="31275" />
-        </div>
-        <div class="inGroup">
-          <p>
-            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
-          </p>
-          <input type="text" id="gkpath1" placeholder="Teleport" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath2" placeholder="Ketra Orc Outpost" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath3" placeholder="Fill if needed" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath4" placeholder="Fill if needed" />
-        </div>
-        <div class="inGroup">
-          <input type="text" id="gkpath5" placeholder="Fill if needed" />
-        </div>
-      </div>
-      <div class="grouped">
-        <!-- AUTOLOGIN -->
-        <div class="onoff">
-          <div class="autologin">
-            <p>Auto-login:</p>
-            <label class="switch">
-              <input
-                type="checkbox"
-                class="autologin_radio"
-                name="autologin"
-                value="0"
-              />
-              <span class="slider round"></span>
-            </label>
-            <!-- <input
+        <div class="grouped">
+          <!-- AUTOLOGIN -->
+          <div class="onoff">
+            <div class="autologin">
+              <p>Auto-login:</p>
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  class="autologin_radio"
+                  name="autologin"
+                  value="0"
+                />
+                <span class="slider round"></span>
+              </label>
+              <!-- <input
               type="radio"
               class="autologin_radio"
               name="autologin"
@@ -132,460 +63,649 @@
               value="0"
               checked
             /><span class="onoffspan">OFF</span> -->
+            </div>
           </div>
-        </div>
-        <!-- USERNAME -->
-        <div>
-          <p>4. Username:</p>
-          <input
-            type="text"
-            id="user"
-            class="autologindisabled"
-            placeholder="Account Username"
-            disabled
-          />
-        </div>
-        <!-- PASSWORD -->
-        <div>
-          <p>5. Password:</p>
-          <input
-            type="text"
-            id="password"
-            class="autologindisabled"
-            placeholder="Account Password"
-            disabled
-          />
-        </div>
-        <!-- GAMEPATH -->
-        <div>
-          <p>3. GamePath:</p>
-          <input
-            type="text"
-            id="gamepath"
-            class="autologindisabled"
-            placeholder="C:\Lineage2\system\l2.exe"
-            disabled
-          />
-        </div>
-      </div>
-      <!-- BUY MP/BSS RADIO + GMSHOP -->
-      <div class="grouped">
-        <div class="onoff">
-          <div class="mp">
-            <p>BUY MP & Spiritshot:</p>
-            <input type="radio" class="mp_radio" name="mp" value="1" /><span
-              class="onoffspan"
-              >ON</span
-            >
+          <!-- USERNAME -->
+          <div>
+            <p>4. Username:</p>
             <input
-              type="radio"
-              class="mp_radio"
-              name="mp"
-              value="0"
-              checked
-            /><span class="onoffspan">OFF</span>
-          </div>
-        </div>
-        <div>
-          <p>7. GMSHOP NPC-ID:</p>
-          <input type="text" id="gmshopid" placeholder="31233" disabled />
-        </div>
-        <div>
-          <p>7. MP Buy TAB @GmSHOP:</p>
-          <input
-            type="text"
-            id="mptab"
-            class="gmshop"
-            placeholder="misc"
-            disabled
-          />
-        </div>
-        <div>
-          <p>7. BSS Buy TAB @GmSHOP:</p>
-          <input
-            type="text"
-            id="bsstab"
-            class="gmshop"
-            placeholder="consumables"
-            disabled
-          />
-        </div>
-        <div>
-          <p>7. Mana potion ID (usually:726/725/728) and Value(how many):</p>
-          <input
-            type="text"
-            id="mpid"
-            class="gmshop"
-            placeholder="726"
-            disabled
-          />
-          <input
-            type="text"
-            id="mpvalue"
-            class="gmshop"
-            placeholder="2000"
-            disabled
-          />
-        </div>
-        <div>
-          <p>
-            7. Spiritshot ID - (default:: BssB:3950,BssA:3951,BssS:3952 ,
-            ssS:1467) and value:
-          </p>
-          <input
-            type="text"
-            id="bssid"
-            class="gmshop"
-            placeholder="3952"
-            disabled
-          />
-          <input
-            type="text"
-            id="bssvalue"
-            class="gmshop"
-            placeholder="2000"
-            disabled
-          />
-        </div>
-      </div>
-      <!-- GK TOWN TO TOWN + PATH -->
-      <div class="grouped">
-        <div class="onoff">
-          <div class="gktown">
-            <p>
-              GK-ID(TELEPORT FROM TOWN TO TOWN), OPTIONAL: e.g If you die in
-              varka and spawn giran you want to return goddard and then tp
-              hunting grounds.:
-            </p>
-            <input
-              type="radio"
-              class="gktown_radio"
-              name="gktown"
-              value="1"
-            /><span class="onoffspan">ON</span>
-            <input
-              type="radio"
-              class="gktown_radio"
-              name="gktown"
-              value="0"
-              checked
-            /><span class="onoffspan">OFF</span>
-          </div>
-        </div>
-        <div>
-          <p>9.GK-ID(TELEPORT FROM TOWN TO TOWN)</p>
-          <input type="text" id="gkidtown" placeholder="31233" disabled />
-        </div>
-        <div class="inGroup">
-          <p>
-            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
-          </p>
-          <input
-            type="text"
-            id="gktownpath1"
-            class="gktownpath"
-            placeholder="Teleport"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="gktownpath2"
-            class="gktownpath"
-            placeholder="Goddard"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="gktownpath3"
-            class="gktownpath"
-            placeholder="Aden - 65000 adena"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="gktownpath4"
-            class="gktownpath"
-            placeholder="Fill if needed"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="gktownpath5"
-            class="gktownpath"
-            placeholder="Fill if needed"
-            disabled
-          />
-        </div>
-      </div>
-      <!-- GK ZIGGURAT -->
-      <div class="grouped">
-        <div class="onoff">
-          <div class="gkziggurat">
-            <p>
-              GK ZIGGURAT(TELEPORT BETWEEN PATHS-EG. ZIGGURAT@catacombs)
-              OPTIONAL:
-            </p>
-            <input
-              type="radio"
-              class="gkziggurat_radio"
-              name="gkziggurat"
-              value="1"
-            /><span class="onoffspan">ON</span>
-            <input
-              type="radio"
-              class="gkziggurat_radio"
-              name="gkziggurat"
-              value="0"
-              checked
-            /><span class="onoffspan">OFF</span>
-          </div>
-        </div>
-        <div>
-          <p>9.GK-ID(TELEPORT BETWEEN PATHS)</p>
-          <input type="text" id="gkidziggurat" placeholder="31119" disabled />
-        </div>
-        <div class="inGroup">
-          <p>
-            8. TeleportPath (Use the lines as shown on your servers Gatekeeper):
-          </p>
-          <input
-            type="text"
-            id="gkidzigguratpath1"
-            class="gkzigguratpath"
-            placeholder="Enter Catacomb"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="gkidzigguratpath2"
-            class="gkzigguratpath"
-            placeholder="Fill if needed"
-            disabled
-          />
-        </div>
-      </div>
-      <!-- BUFFER BYPASSING -->
-      <div class="grouped">
-        <div class="onoff">
-          <div class="bufferbypass">
-            <p>BUFFS BYPASS INSTEAD OF PICKUP:</p>
-            <input
-              type="radio"
-              class="bufferbypass_radio"
-              name="bufferbypass"
-              value="1"
-            /><span class="onoffspan">ON</span>
-            <input
-              type="radio"
-              class="bufferbypass_radio"
-              name="bufferbypass"
-              value="0"
-              checked
-            /><span class="onoffspan">OFF</span>
-          </div>
-        </div>
-        <div class="onoff">
-          <div class="bufferbypassaltb">
-            <p>ALT+B BUFFS:</p>
-            <input
-              type="radio"
-              id="bufferbypassaltb_radio_id1"
-              class="bufferbypassaltb_radio"
-              name="bufferbypassaltb"
-              value="1"
+              type="text"
+              id="user"
+              class="autologindisabled"
+              placeholder="Account Username"
               disabled
-            /><span class="onoffspan">ON</span>
+            />
+          </div>
+          <!-- PASSWORD -->
+          <div>
+            <p>5. Password:</p>
             <input
-              type="radio"
-              id="bufferbypassaltb_radio_id2"
-              class="bufferbypassaltb_radio"
-              name="bufferbypassaltb"
-              value="0"
-              checked
+              type="text"
+              id="password"
+              class="autologindisabled"
+              placeholder="Account Password"
               disabled
-            /><span class="onoffspan">OFF</span>
+            />
+          </div>
+          <!-- GAMEPATH -->
+          <div>
+            <p>3. GamePath:</p>
+            <input
+              type="text"
+              id="gamepath"
+              class="autologindisabled"
+              placeholder="C:\Lineage2\system\l2.exe"
+              disabled
+            />
           </div>
         </div>
-        <div>
-          <p>9.BUFFER-ID:</p>
-          <input type="text" id="bufferbypassid" placeholder="31222" disabled />
-        </div>
-        <div class="inGroup">
-          <p>8. BUFFS - PICK:</p>
-          <input
-            type="text"
-            id="buffbypass1"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_um?name=mage_prem&pre=1&target=Player"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buffbypass2"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_bp?skill=22872065"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buffbypass3"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_bp?skill=89325569"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buffbypass4"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_bp?skill=89325569"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buffbypass5"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_bp?skill=89325569"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buffbypass6"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_bp?skill=89325569"
-            disabled
-          />
-        </div>
-        <div class="inGroup">
-          <input
-            type="text"
-            id="buffbypass7"
-            class="buffsbypass"
-            placeholder="_bbs_buffer_bp?skill=89325569"
-            disabled
-          />
-        </div>
-      </div>
-      <!-- RANDOM MOVEMENTS -->
-      <div class="onoff">
-        <div class="randommove">
-          <p>Random movements while hitting mobs:</p>
-          <input
-            type="radio"
-            class="randommove_radio"
-            name="randommove"
-            value="1"
-          /><span class="onoffspan">ON</span>
-          <input
-            type="radio"
-            class="randommove_radio"
-            name="randommove"
-            value="0"
-            checked
-          /><span class="onoffspan">OFF</span>
-        </div>
-      </div>
-      <!-- HUNTING GROUNDS REBUFF -->
-      <div class="onoff">
-        <div class="huntingrebuff">
-          <p>Hunting grounds rebuff, no soe. [Buffbook on f12]:</p>
-          <input
-            type="radio"
-            class="huntingrebuff_radio"
-            name="huntingrebuff"
-            value="1"
-          /><span class="onoffspan">ON</span>
-          <input
-            type="radio"
-            class="huntingrebuff_radio"
-            name="huntingrebuff"
-            value="0"
-            checked
-          /><span class="onoffspan">OFF</span>
+        <!-- 24H START SCRIPT TIMER -->
+        <div class="grouped">
+          <div class="onoff">
+            <div class="starttimer">
+              <p>
+                Set Script's Start time using 24h system and minutes also(1-24h
+                and 1-59minutes):
+              </p>
+              <input
+                type="radio"
+                class="starttimer_radio"
+                name="starttimer"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="starttimer_radio"
+                name="starttimer"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <div>
+            <p>9. Set Hours:</p>
+            <input
+              type="text"
+              id="starttimerhour"
+              class="starttimerboth"
+              placeholder="20"
+              disabled
+            />
+          </div>
+          <div>
+            <p>9. Set Minutes:</p>
+            <input
+              type="text"
+              id="starttimermin"
+              class="starttimerboth"
+              placeholder="0"
+              disabled
+            />
+          </div>
+          <!-- RANDOM MOVEMENTS -->
+          <div class="onoff">
+            <div class="randommove">
+              <p>Random movements while hitting mobs:</p>
+              <input
+                type="radio"
+                class="randommove_radio"
+                name="randommove"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="randommove_radio"
+                name="randommove"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <!-- HUNTING GROUNDS REBUFF -->
+          <div class="onoff">
+            <div class="huntingrebuff">
+              <p>Hunting grounds rebuff, no soe. [Buffbook on f12]:</p>
+              <input
+                type="radio"
+                class="huntingrebuff_radio"
+                name="huntingrebuff"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="huntingrebuff_radio"
+                name="huntingrebuff"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <!-- SOE IF MANA IS LOW -->
+          <div class="onoff">
+            <div class="soeiflow">
+              <p>Soe if bss/ss-mana pot is low :</p>
+              <input
+                type="radio"
+                class="soeiflow_radio"
+                name="soeiflow"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="soeiflow_radio"
+                name="soeiflow"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- SOE IF MANA IS LOW -->
-      <div class="onoff">
-        <div class="soeiflow">
-          <p>Soe if bss/ss-mana pot is low :</p>
-          <input
-            type="radio"
-            class="soeiflow_radio"
-            name="soeiflow"
-            value="1"
-          /><span class="onoffspan">ON</span>
-          <input
-            type="radio"
-            class="soeiflow_radio"
-            name="soeiflow"
-            value="0"
-            checked
-          /><span class="onoffspan">OFF</span>
+      <!-- BUFFER -->
+      <div class="bufftab">
+        <div class="grouped">
+          <div>
+            <p>9.BUFFER-ID:</p>
+            <input type="text" id="bufferid" placeholder="31222" />
+          </div>
+          <div class="inGroup">
+            <p>8. BUFFS - PICK:</p>
+            <input type="text" id="buff1" class="buffs" placeholder="Buffs" />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buff2"
+              class="buffs"
+              placeholder="Mage buffs"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buff3"
+              class="buffs"
+              placeholder="Special Buffs"
+            />
+          </div>
+          <div class="inGroup">
+            <input type="text" id="buff4" class="buffs" placeholder="Malaria" />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buff5"
+              class="buffs"
+              placeholder="Fill if needed"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buff6"
+              class="buffs"
+              placeholder="Fill if needed"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buff7"
+              class="buffs"
+              placeholder="Fill if needed"
+            />
+          </div>
         </div>
-      </div>
-      <!-- 24H START SCRIPT TIMER -->
-      <div class="grouped">
-        <div class="onoff">
-          <div class="starttimer">
+        <!-- BUFFER BYPASSING -->
+        <div class="grouped">
+          <div class="onoff">
+            <div class="bufferbypass">
+              <p>BUFFS BYPASS INSTEAD OF PICKUP:</p>
+              <input
+                type="radio"
+                class="bufferbypass_radio"
+                name="bufferbypass"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="bufferbypass_radio"
+                name="bufferbypass"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <div class="onoff">
+            <div class="bufferbypassaltb">
+              <p>ALT+B BUFFS + Teleport:</p>
+              <input
+                type="radio"
+                id="bufferbypassaltb_radio_id1"
+                class="bufferbypassaltb_radio"
+                name="bufferbypassaltb"
+                value="1"
+                disabled
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                id="bufferbypassaltb_radio_id2"
+                class="bufferbypassaltb_radio"
+                name="bufferbypassaltb"
+                value="0"
+                checked
+                disabled
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <div>
+            <p>9.BUFFER-ID:</p>
+            <input
+              type="text"
+              id="bufferbypassid"
+              placeholder="31222"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <p>8. BUFFS - PICK:</p>
+            <input
+              type="text"
+              id="buffbypass1"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_um?name=mage_prem&pre=1&target=Player"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buffbypass2"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_bp?skill=22872065"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buffbypass3"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_bp?skill=89325569"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buffbypass4"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_bp?skill=89325569"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buffbypass5"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_bp?skill=89325569"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buffbypass6"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_bp?skill=89325569"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="buffbypass7"
+              class="buffsbypass"
+              placeholder="_bbs_buffer_bp?skill=89325569"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <p>8. Teleport - Bypass:</p>
+            <input
+              type="text"
+              id="tpbypass1"
+              class="tpsbypass"
+              placeholder="_bbs_tper_um?name"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="tpbypass2"
+              class="tpsbypass"
+              placeholder="_bbs_tper_bp?"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="tpbypass3"
+              class="tpsbypass"
+              placeholder="_bbs_tper_bp?"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="tpbypass4"
+              class="tpsbypass"
+              placeholder="_bbs_tper_bp?"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="tpbypass5"
+              class="tpsbypass"
+              placeholder="_bbs_tper_bp?"
+              disabled
+            />
+          </div>
+        </div>
+        <!-- BUY MP/BSS RADIO + GMSHOP -->
+        <div class="grouped">
+          <div class="onoff">
+            <div class="mp">
+              <p>BUY MP & Spiritshot:</p>
+              <input type="radio" class="mp_radio" name="mp" value="1" /><span
+                class="onoffspan"
+                >ON</span
+              >
+              <input
+                type="radio"
+                class="mp_radio"
+                name="mp"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <div>
+            <p>7. GMSHOP NPC-ID:</p>
+            <input type="text" id="gmshopid" placeholder="31233" disabled />
+          </div>
+          <div>
+            <p>7. MP Buy TAB @GmSHOP:</p>
+            <input
+              type="text"
+              id="mptab"
+              class="gmshop"
+              placeholder="misc"
+              disabled
+            />
+          </div>
+          <div>
+            <p>7. BSS Buy TAB @GmSHOP:</p>
+            <input
+              type="text"
+              id="bsstab"
+              class="gmshop"
+              placeholder="consumables"
+              disabled
+            />
+          </div>
+          <div>
+            <p>7. Mana potion ID (usually:726/725/728) and Value(how many):</p>
+            <input
+              type="text"
+              id="mpid"
+              class="gmshop"
+              placeholder="726"
+              disabled
+            />
+            <input
+              type="text"
+              id="mpvalue"
+              class="gmshop"
+              placeholder="2000"
+              disabled
+            />
+          </div>
+          <div>
             <p>
-              Set Script's Start time using 24h system and minutes also(1-24h
-              and 1-59minutes):
+              7. Spiritshot ID - (default:: BssB:3950,BssA:3951,BssS:3952 ,
+              ssS:1467) and value:
             </p>
             <input
-              type="radio"
-              class="starttimer_radio"
-              name="starttimer"
-              value="1"
-            /><span class="onoffspan">ON</span>
+              type="text"
+              id="bssid"
+              class="gmshop"
+              placeholder="3952"
+              disabled
+            />
             <input
-              type="radio"
-              class="starttimer_radio"
-              name="starttimer"
-              value="0"
-              checked
-            /><span class="onoffspan">OFF</span>
+              type="text"
+              id="bssvalue"
+              class="gmshop"
+              placeholder="2000"
+              disabled
+            />
           </div>
         </div>
-        <div>
-          <p>9. Set Hours:</p>
-          <input
-            type="text"
-            id="starttimerhour"
-            class="starttimerboth"
-            placeholder="20"
-            disabled
-          />
+      </div>
+      <div class="gktab">
+        <!-- GK HUNTING GROUNDS + TP PATH -->
+        <div class="grouped">
+          <!-- <div class="onoff">
+            <div class="gkbypassaltb">
+              <p>ALT+B TELEPORT:(If alt+b buffs is on this must be on too!)</p>
+              <input
+                type="radio"
+                id="gkbypassaltb_radio_id1"
+                class="gkbypassaltb_radio"
+                name="gkbypassaltb"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                id="gkbypassaltb_radio_id2"
+                class="gkbypassaltb_radio"
+                name="gkbypassaltb"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div> -->
+          <div>
+            <p>7. Gatekeeper NPC-ID:</p>
+            <input type="text" id="gkid" placeholder="31275" />
+          </div>
+          <div class="inGroup">
+            <p>
+              8. TeleportPath (Use the lines as shown on your servers
+              Gatekeeper):
+            </p>
+            <input
+              type="text"
+              id="gkpath1"
+              class="teleports"
+              placeholder="Teleport"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gkpath2"
+              class="teleports"
+              placeholder="Ketra Orc Outpost"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gkpath3"
+              class="teleports"
+              placeholder="Fill if needed"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gkpath4"
+              class="teleports"
+              placeholder="Fill if needed"
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gkpath5"
+              class="teleports"
+              placeholder="Fill if needed"
+            />
+          </div>
         </div>
-        <div>
-          <p>9. Set Minutes:</p>
-          <input
-            type="text"
-            id="starttimermin"
-            class="starttimerboth"
-            placeholder="0"
-            disabled
-          />
+        <!-- GK TOWN TO TOWN + PATH -->
+        <div class="grouped">
+          <div class="onoff">
+            <div class="gktown">
+              <p>
+                GK-ID(TELEPORT FROM TOWN TO TOWN), OPTIONAL: e.g If you die in
+                varka and spawn giran you want to return goddard and then tp
+                hunting grounds.:
+              </p>
+              <input
+                type="radio"
+                class="gktown_radio"
+                name="gktown"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="gktown_radio"
+                name="gktown"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <div>
+            <p>9.GK-ID(TELEPORT FROM TOWN TO TOWN)</p>
+            <input type="text" id="gkidtown" placeholder="31233" disabled />
+          </div>
+          <div class="inGroup">
+            <p>
+              8. TeleportPath (Use the lines as shown on your servers
+              Gatekeeper):
+            </p>
+            <input
+              type="text"
+              id="gktownpath1"
+              class="gktownpath"
+              placeholder="Teleport"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gktownpath2"
+              class="gktownpath"
+              placeholder="Goddard"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gktownpath3"
+              class="gktownpath"
+              placeholder="Aden - 65000 adena"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gktownpath4"
+              class="gktownpath"
+              placeholder="Fill if needed"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gktownpath5"
+              class="gktownpath"
+              placeholder="Fill if needed"
+              disabled
+            />
+          </div>
+        </div>
+        <!-- GK ZIGGURAT -->
+        <div class="grouped">
+          <div class="onoff">
+            <div class="gkziggurat">
+              <p>
+                GK ZIGGURAT(TELEPORT BETWEEN PATHS-EG. ZIGGURAT@catacombs)
+                OPTIONAL:
+              </p>
+              <input
+                type="radio"
+                class="gkziggurat_radio"
+                name="gkziggurat"
+                value="1"
+              /><span class="onoffspan">ON</span>
+              <input
+                type="radio"
+                class="gkziggurat_radio"
+                name="gkziggurat"
+                value="0"
+                checked
+              /><span class="onoffspan">OFF</span>
+            </div>
+          </div>
+          <div>
+            <p>9.GK-ID(TELEPORT BETWEEN PATHS)</p>
+            <input type="text" id="gkidziggurat" placeholder="31119" disabled />
+          </div>
+          <div class="inGroup">
+            <p>
+              8. TeleportPath (Use the lines as shown on your servers
+              Gatekeeper):
+            </p>
+            <input
+              type="text"
+              id="gkidzigguratpath1"
+              class="gkzigguratpath"
+              placeholder="Enter Catacomb"
+              disabled
+            />
+          </div>
+          <div class="inGroup">
+            <input
+              type="text"
+              id="gkidzigguratpath2"
+              class="gkzigguratpath"
+              placeholder="Fill if needed"
+              disabled
+            />
+          </div>
         </div>
       </div>
+      <!-- <div class="shoptab"> -->
+
+      <!-- <div class="radios grouped"> -->
+
+      <!-- </div> -->
+      <!-- </div> -->
       <div>
         <input
           type="button"

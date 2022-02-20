@@ -1,5 +1,6 @@
 const gmshopid = document.getElementById("gmshopid");
 const gkidtown = document.getElementById("gkidtown");
+const gkId = document.getElementById("gkid");
 const gktownpath = document.querySelectorAll(".gktownpath");
 const gmshop = document.querySelectorAll(".gmshop");
 const gkidziggurat = document.getElementById("gkidziggurat");
@@ -11,6 +12,8 @@ const buffsbypass = document.querySelectorAll(".buffsbypass");
 const bufferbypassaltb = document.querySelectorAll(".bufferbypassaltb_radio");
 const starttimerboth = document.querySelectorAll(".starttimerboth");
 const autologindisabled = document.querySelectorAll(".autologindisabled");
+const teleports = document.querySelectorAll(".teleports");
+const tpsbypass = document.querySelectorAll(".tpsbypass");
 const bufferbypassaltb_radio_id1 = document.getElementById(
   "bufferbypassaltb_radio_id1"
 );
@@ -74,13 +77,20 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
     if (bufferbypassid.disabled != false) {
       bufferbypassid.disabled = false;
       bufferid.disabled = true;
+      gkId.disabled = true;
     } else {
       bufferbypassid.disabled = true;
       bufferid.disabled = false;
+      gkId.disabled = false;
     }
-    if (bufferbypass_radio == 0) bufferbypassid.disabled = true;
-    if (bufferbypass_radio == 1 && bufferbypassaltb_radio == 1)
+    if (bufferbypass_radio == 0) {
       bufferbypassid.disabled = true;
+      // gkid.disabled = true;
+    }
+    if (bufferbypass_radio == 1 && bufferbypassaltb_radio == 1) {
+      bufferbypassid.disabled = true;
+      // gkId.disabled = true;
+    }
     // if (bufferbypass_radio == 0) {
     //   bufferbypassaltb_radio_id1.checked = false;
     //   bufferbypassaltb_radio_id2.checked = true;
@@ -93,7 +103,18 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
           ? (each.disabled = false)
           : (each.disabled = true);
       });
+      teleports.forEach((each) => {
+        // each.value = "empty";
+        each.disabled != false
+          ? (each.disabled = false)
+          : (each.disabled = true);
+      });
       bufferbypassaltb.forEach((each) => {
+        each.disabled != false
+          ? (each.disabled = false)
+          : (each.disabled = true);
+      });
+      tpsbypass.forEach((each) => {
         each.disabled != false
           ? (each.disabled = false)
           : (each.disabled = true);
@@ -105,7 +126,10 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
 // AUTO-Login
 document.querySelectorAll(".autologin_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
-    e.target.value == 0 ? (autologin_radio = 1) : (autologin_radio = 0);
+    // e.target.value != 0 ? (autologin_radio = 0) : (autologin_radio = 1);
+    e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
+    autologin_radio = e.target.value;
+
     // autologin_radio = e.target.value;
     autologindisabled.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
@@ -161,7 +185,6 @@ let saveFile = () => {
   const userName = document.getElementById("user");
   const password = document.getElementById("password");
   const loadMap = document.getElementById("loadmap");
-  const gkId = document.getElementById("gkid");
   const gkpath1 = document.getElementById("gkpath1");
   const gkpath2 = document.getElementById("gkpath2");
   const gkpath3 = document.getElementById("gkpath3");
@@ -196,6 +219,11 @@ let saveFile = () => {
   const buffbypass7 = document.getElementById("buffbypass7");
   const starttimerhour = document.getElementById("starttimerhour");
   const starttimermin = document.getElementById("starttimermin");
+  const tpbypass1 = document.getElementById("tpbypass1");
+  const tpbypass2 = document.getElementById("tpbypass2");
+  const tpbypass3 = document.getElementById("tpbypass3");
+  const tpbypass4 = document.getElementById("tpbypass4");
+  const tpbypass5 = document.getElementById("tpbypass5");
 
   // This variable stores all the data.
   let data = `1)XML Profile Fight back:

@@ -11,9 +11,20 @@ html {
 }
 
 body {
-  /* background-color: #262626; */
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
+    url(elf.webp);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+::placeholder {
+  color: #333;
+}
+::placeholder:disabled {
+  color: #fff;
 }
 
 div {
@@ -49,7 +60,7 @@ input[type="radio"] {
 }
 
 input[type="text"]:disabled {
-  background: #aaa;
+  background: #333;
   transition: 0.3s;
 }
 
@@ -67,8 +78,9 @@ input[type="text"]:disabled {
 }
 
 .grouped {
-  border: 5px solid #222;
-  padding: 0.2rem 1rem;
+  border: 2px solid #555;
+  margin: 1rem;
+  /* padding: 0.2rem 1rem; */
   /* background-color: #222; */
 }
 
@@ -76,8 +88,32 @@ input[type="text"]:disabled {
   padding: 0.1rem 2rem;
 }
 .inGroup input {
-  width: 50%;
+  width: 90%;
 }
+
+.bufftab {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gktab {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.logintab {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* .shoptab {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+/* .radios {
+  margin: 0 auto;
+} */
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* The switch - the box around the slider */
 .switch {
