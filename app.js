@@ -35,11 +35,14 @@ let starttimer_radio;
 // BUY MP / BSS RADIO
 document.querySelectorAll(".mp_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     mp_radio = e.target.value;
+    //gmshop id on change enabled/disbled
     gmshopid.disabled != false
       ? (gmshopid.disabled = false)
       : (gmshopid.disabled = true);
+    //gmshop list on change enabled/disbled
     gmshop.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -49,11 +52,14 @@ document.querySelectorAll(".mp_radio").forEach((check) => {
 // GK TOWN TO TOWN RADIO
 document.querySelectorAll(".gktown_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     gktown_radio = e.target.value;
+    //gktown to town id on change enabled/disbled
     gkidtown.disabled != false
       ? (gkidtown.disabled = false)
       : (gkidtown.disabled = true);
+    //gktown to town path list on change enabled/disbled
     gktownpath.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -62,11 +68,14 @@ document.querySelectorAll(".gktown_radio").forEach((check) => {
 // GK ZIGGURAT
 document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     gkziggurat_radio = e.target.value;
+    //gkziggurat to town id on change enabled/disbled
     gkidziggurat.disabled != false
       ? (gkidziggurat.disabled = false)
       : (gkidziggurat.disabled = true);
+    //gkziggurat path list on change enabled/disbled
     gkzigguratpath.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
@@ -75,9 +84,11 @@ document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
 // BUFFER BYPASS
 document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
   check.addEventListener("change", function (e) {
+    // If checkbox is on value = 1 if off value =0
     e.target.value == 0 ? (e.target.value = 1) : (e.target.value = 0);
     bufferbypass_radio = e.target.value;
-    // bufferid.value = 0;
+    //buffer on bypass mode id on change enabled/disbled
+    //on change buffer/gk id enable/disable
     if (bufferbypassid.disabled != false) {
       bufferbypassid.disabled = false;
       bufferid.disabled = true;
@@ -87,42 +98,34 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
       bufferid.disabled = false;
       gkId.disabled = false;
     }
+    // if checkbox = 0 buffer bypass id is disabled
     if (bufferbypass_radio == 0) {
       bufferbypassid.disabled = true;
-      // gkid.disabled = true;
     }
+    // if checkbox = 1 and alt+b checkbox =1 buffer bypass id is disabled
     if (bufferbypass_radio == 1 && bufferbypassaltb_radio == 1) {
       bufferbypassid.disabled = true;
-      // gkId.disabled = true;
     }
-    // if (bufferbypass_radio == 0) {
-    //   bufferbypassaltb_radio_id1.checked = false;
-    //   bufferbypassaltb_radio_id2.checked = true;
-    // }
+    // if checkbox = 0 and alt+b checkbox =1 buffer/gk npc id is enabled
+    if (bufferbypass_radio == 0 && bufferbypassaltb_radio == 1) {
+      bufferid.disabled = false;
+      gkId.disabled = false;
+    }
+
     buffsbypass.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
-      buffs.forEach((each) => {
-        // each.value = "empty";
-        each.disabled != false
-          ? (each.disabled = false)
-          : (each.disabled = true);
-      });
-      teleports.forEach((each) => {
-        // each.value = "empty";
-        each.disabled != false
-          ? (each.disabled = false)
-          : (each.disabled = true);
-      });
-      bufferbypassaltb.forEach((each) => {
-        each.disabled != false
-          ? (each.disabled = false)
-          : (each.disabled = true);
-      });
-      tpsbypass.forEach((each) => {
-        each.disabled != false
-          ? (each.disabled = false)
-          : (each.disabled = true);
-      });
+    });
+    buffs.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    });
+    teleports.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    });
+    bufferbypassaltb.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    });
+    tpsbypass.forEach((each) => {
+      each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
   });
 });
