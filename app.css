@@ -13,11 +13,7 @@ html {
 body {
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
-    url(elf.webp);
-  background-size: cover;
-  background-position: center; */
-  background: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)),
+  background: linear-gradient(rgba(0, 0, 0, 0.755), rgba(0, 0, 0, 0.755)),
     url(elf.webp) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -27,7 +23,7 @@ body {
 }
 
 ::placeholder {
-  color: #aaa;
+  color: #999;
 }
 ::placeholder:disabled {
   color: #fff;
@@ -66,7 +62,8 @@ input[type="radio"] {
 }
 
 input[type="text"]:disabled {
-  background: #333;
+  background: #999;
+  /* background: #333; */
   transition: 0.3s;
 }
 
@@ -110,6 +107,10 @@ input[type="text"]:disabled {
 .logintab {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gmshopgroup {
+  padding: 0.1rem 0;
 }
 
 /* .shoptab {
