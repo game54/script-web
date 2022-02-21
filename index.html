@@ -789,8 +789,42 @@
         <input
           type="button"
           id="bt"
-          value="Save data to file"
+          value="Save settings to file"
           onclick="saveFile()"
+        />
+      </div>
+      <!-- MoveTo box -->
+      <div class="movetobox">
+        <textarea
+          id="moveto"
+          class="movetoclass"
+          name="moveto"
+          placeholder="MoveTo Coordinates Max 15 lines"
+          maxlength="330"
+        ></textarea>
+
+        <img src="movetopic.png" class="movetopicclass" />
+
+        <textarea
+          id="moveto2"
+          class="movetoclass"
+          name="moveto2"
+          placeholder="MoveTo2 Coordinates Max 5 lines"
+          maxlength="110"
+        ></textarea>
+      </div>
+      <div class="cordsBtn">
+        <input
+          type="button"
+          id="bt"
+          value="Save coords to file"
+          onclick="saveFile2()"
+        />
+        <input
+          type="button"
+          id="bt"
+          value="Save coords to file"
+          onclick="saveFile3()"
         />
       </div>
     </main>

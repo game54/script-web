@@ -385,3 +385,50 @@ ${starttimermin.value || "empty"}
 
   newLink.click();
 };
+
+//savefile for coords MoveTo
+
+let saveFile2 = () => {
+  const moveto = document.getElementById("moveto");
+
+  let data2 = moveto.value;
+  // Convert the text to BLOB.
+  const textToBLOB = new Blob([data2], { type: "text/plain" });
+  const sFileName2 = "MoveTo.txt"; // The file to save the data.
+
+  let newLink = document.createElement("a");
+  newLink.download = sFileName2;
+
+  if (window.webkitURL != null) {
+    newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+  } else {
+    newLink.href = window.URL.createObjectURL(textToBLOB);
+    newLink.style.display = "none";
+    document.body.appendChild(newLink);
+  }
+
+  newLink.click();
+};
+//save file for coords Moveto2
+
+let saveFile3 = () => {
+  const moveto2 = document.getElementById("moveto2");
+
+  let data3 = moveto2.value;
+  // Convert the text to BLOB.
+  const textToBLOB = new Blob([data3], { type: "text/plain" });
+  const sFileName3 = "MoveTo2.txt"; // The file to save the data.
+
+  let newLink = document.createElement("a");
+  newLink.download = sFileName3;
+
+  if (window.webkitURL != null) {
+    newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+  } else {
+    newLink.href = window.URL.createObjectURL(textToBLOB);
+    newLink.style.display = "none";
+    document.body.appendChild(newLink);
+  }
+
+  newLink.click();
+};

@@ -68,6 +68,28 @@ input[type="button"] {
   margin: 1rem 0 5rem;
 }
 
+.movetobox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movetoclass {
+  height: 40rem;
+  width: 23rem;
+  resize: none;
+}
+
+.movetopicclass {
+  width: 40%;
+  height: 40%;
+  opacity: 50%;
+}
+
+.cordsBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
 input[type="button"]:hover {
   background-color: #2563eb;
   transform: translateY(-2px);
