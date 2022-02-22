@@ -21,6 +21,9 @@ const bufferbypassaltb_radio_id2 = document.getElementById(
   "bufferbypassaltb_radio_id2"
 );
 const defaultValue = `999999, -999999, -9999`;
+const moveto2 = document.getElementById("moveto2");
+const redstar = document.querySelectorAll(".redstar");
+const redstarbypass = document.querySelectorAll(".redstarbypass");
 
 let mp_radio;
 let gktown_radio;
@@ -80,6 +83,9 @@ document.querySelectorAll(".gkziggurat_radio").forEach((check) => {
     gkzigguratpath.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
+    moveto2.disabled != false
+      ? (moveto2.disabled = false)
+      : (moveto2.disabled = true);
   });
 });
 // BUFFER BYPASS
@@ -129,6 +135,17 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
     });
     tpsbypass.forEach((each) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
+    });
+
+    // redstar.forEach((each) => {
+    //   each.textContent != "*"
+    //     ? (each.textContent = "*")
+    //     : (each.textContent = "");
+    // });
+    redstarbypass.forEach((each) => {
+      each.textContent != "*"
+        ? (each.textContent = "*")
+        : (each.textContent = "");
     });
   });
 });
@@ -399,10 +416,10 @@ let saveFile2 = () => {
   let text = moveto.value;
   let lines = text.split(/\r|\r\n|\n/);
   let count = lines.length;
-  console.log(count);
+  // console.log(count);
   if (count == 15) data2 = text;
   if (count < 15)
-    data2 = `${text}
+    data2 = `${text || defaultValue}
 ${defaultValue}
 ${defaultValue}
 ${defaultValue}
@@ -438,17 +455,17 @@ ${defaultValue}`;
 //save file for coords Moveto2
 
 let saveFile3 = () => {
-  const moveto2 = document.getElementById("moveto2");
+  // const moveto2 = document.getElementById("moveto2");
 
   let data3;
 
   let text = moveto2.value;
   let lines = text.split(/\r|\r\n|\n/);
   let count = lines.length;
-  console.log(count);
+  // console.log(count);
   if (count == 5) data3 = text;
   if (count < 5)
-    data3 = `${text}
+    data3 = `${text || defaultValue}
 ${defaultValue}
 ${defaultValue}
 ${defaultValue}

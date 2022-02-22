@@ -7,13 +7,13 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* scroll-behavior: smooth; */
 }
 
 body {
   font-family: "Rubik", sans-serif;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background: linear-gradient(rgba(0, 0, 0, 0.755), rgba(0, 0, 0, 0.755)),
     url(elf.webp) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -21,6 +21,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   color: #fff;
+  min-width: 810px;
 }
 
 ::placeholder {
@@ -50,17 +51,6 @@ select {
   /* border: 1px solid #ccc; */
   border-radius: 4px;
 }
-input[type="button"] {
-  font-size: 1.7rem;
-  /* width: auto; */
-  /* float: right; */
-  cursor: pointer;
-  padding: 2rem 4rem;
-  border-radius: 4px;
-  background-color: #1d4ed8;
-  color: #eee;
-  transition: 0.4s;
-}
 
 .btn {
   display: flex;
@@ -82,12 +72,24 @@ input[type="button"] {
 .movetopicclass {
   width: 40%;
   height: 40%;
-  opacity: 50%;
+  opacity: 40%;
 }
 
 .cordsBtn {
   display: flex;
   justify-content: space-between;
+}
+
+input[type="button"] {
+  font-size: 1.7rem;
+  /* width: auto; */
+  /* float: right; */
+  cursor: pointer;
+  padding: 2rem 4rem;
+  border-radius: 4px;
+  background-color: #1d4ed8;
+  color: #eee;
+  transition: 0.4s;
 }
 
 input[type="button"]:hover {
@@ -108,6 +110,11 @@ input[type="text"]:disabled {
   background: #999;
   /* background: #333; */
   transition: 0.3s;
+}
+
+.cordsBtn input[type="button"] {
+  padding: 1rem 2rem;
+  margin: 0 2.5rem 0 2.5rem;
 }
 
 .main {
@@ -157,14 +164,24 @@ input[type="text"]:disabled {
   padding: 0.1rem 0;
 }
 
-/* .shoptab {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-} */
+.redstar,
+.redstarbypass {
+  color: #991b1b;
+  font-size: 1.6rem;
+}
 
-/* .radios {
-  margin: 0 auto;
-} */
+.requiredfield p {
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  opacity: 70%;
+}
+
+.reds {
+  font-size: 2rem;
+  color: #dc2626;
+}
+
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* The switch - the box around the slider */
 .switch {
@@ -227,4 +244,19 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* MEDIA */
+
+@media (max-width: 1600px) {
+  .main {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1150px) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+  }
 }

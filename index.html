@@ -19,18 +19,18 @@
         <div class="grouped">
           <!-- PROFILE 1 -->
           <div>
-            <p>1. XML Fight Back Profile(When running to farm area):</p>
+            <p>1.<span class="redstar">*</span> XML Fight Back Profile(When running to farm area):</p>
             <input type="text" id="profile1" placeholder="username.xml" />
           </div>
           <!-- PROFILE 2 -->
           <div>
-            <p>2. XML Farm Profile:</p>
+            <p>2.<span class="redstar">*</span> XML Farm Profile:</p>
             <input type="text" id="profile2" placeholder="username.xml" />
           </div>
           <!-- LOAD MAP -->
           <div>
             <p>
-              3. LoadMAP(Load an already saved map for the hunting grounds
+              3.<span class="redstar">*</span> LoadMAP(Load an already saved map for the hunting grounds
               farm):
             </p>
             <input type="text" id="loadmap" placeholder="ketrafarm.zmap" />
@@ -246,11 +246,11 @@
       <div class="bufftab">
         <div class="grouped">
           <div>
-            <p>14.BUFFER-ID:</p>
+            <p>14.<span class="redstarbypass">*</span>BUFFER-ID:</p>
             <input type="text" id="bufferid" placeholder="31222" />
           </div>
           <div class="inGroup">
-            <p>15. BUFFS - PICK:</p>
+            <p>15.<span class="redstarbypass">*</span> BUFFS - PICK:</p>
             <input type="text" id="buff1" class="buffs" placeholder="Buffs" />
           </div>
           <div class="inGroup">
@@ -349,7 +349,7 @@
             </div>
           </div>
           <div>
-            <p>18. BUFFER-ID:</p>
+            <p>18.<span class="redstarbypass"></span> BUFFER-ID:</p>
             <input
               type="text"
               id="bufferbypassid"
@@ -358,7 +358,7 @@
             />
           </div>
           <div class="inGroup">
-            <p>19. BUFFS - Bypass:</p>
+            <p>19.<span class="redstarbypass"></span> BUFFS - Bypass:</p>
             <input
               type="text"
               id="buffbypass1"
@@ -422,7 +422,7 @@
             />
           </div>
           <div class="inGroup">
-            <p>20. TELEPORT - Bypass:</p>
+            <p>20.<span class="redstarbypass"></span> TELEPORT - Bypass:</p>
             <input
               type="text"
               id="tpbypass1"
@@ -530,7 +530,7 @@
                 type="text"
                 id="mpvalue"
                 class="gmshop"
-                placeholder="2000"
+                placeholder="150"
                 disabled
               />
             </div>
@@ -564,33 +564,13 @@
       <div class="gktab">
         <!-- GK HUNTING GROUNDS + TP PATH -->
         <div class="grouped">
-          <!-- <div class="onoff">
-            <div class="gkbypassaltb">
-              <p>ALT+B TELEPORT:(If alt+b buffs is on this must be on too!)</p>
-              <input
-                type="radio"
-                id="gkbypassaltb_radio_id1"
-                class="gkbypassaltb_radio"
-                name="gkbypassaltb"
-                value="1"
-              /><span class="onoffspan">ON</span>
-              <input
-                type="radio"
-                id="gkbypassaltb_radio_id2"
-                class="gkbypassaltb_radio"
-                name="gkbypassaltb"
-                value="0"
-                checked
-              /><span class="onoffspan">OFF</span>
-            </div>
-          </div> -->
           <div>
-            <p>27. Gatekeeper NPC-ID:</p>
+            <p>27.<span class="redstarbypass">*</span> Gatekeeper NPC-ID:</p>
             <input type="text" id="gkid" placeholder="31275" />
           </div>
           <div class="inGroup">
             <p>
-              28. TeleportPath (Use the lines as shown on your servers
+              28.<span class="redstarbypass">*</span> TeleportPath (Use the lines as shown on your servers
               Gatekeeper):
             </p>
             <input
@@ -725,7 +705,8 @@
             <div class="gkziggurat">
               <p>
                 32. GK ZIGGURAT(TELEPORT BETWEEN PATHS) e.g Use this gk as an
-                extra teleport. e.g Enter catacombs
+                extra teleport. e.g Enter catacombs.<br>
+                Use coordinates num36 after using this teleport.
               </p>
               <label class="switch">
                 <input
@@ -779,12 +760,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="shoptab"> -->
-
-      <!-- <div class="radios grouped"> -->
-
-      <!-- </div> -->
-      <!-- </div> -->
+<div class="requiredfield"><p><span class="reds">* </span>Required Fields.</p></div>
       <div class="btn">
         <input
           type="button"
@@ -799,7 +775,7 @@
           id="moveto"
           class="movetoclass"
           name="moveto"
-          placeholder="MoveTo Coordinates Max 15 lines"
+          placeholder='35. Hunting grounds coordinates.&#10 Use max 15 lines.'
           maxlength="330"
         ></textarea>
 
@@ -809,8 +785,9 @@
           id="moveto2"
           class="movetoclass"
           name="moveto2"
-          placeholder="MoveTo2 Coordinates Max 5 lines"
+          placeholder="36. Hunting grounds second coordinates.&#10 Use max 5 lines.&#10&#10&#10&#10&#10*Works only if you activate ziggurat GK(num32).&#10&#10*Can work as an extender to the first coords."
           maxlength="110"
+          disabled
         ></textarea>
       </div>
       <div class="cordsBtn">
