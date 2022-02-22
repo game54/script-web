@@ -22,7 +22,6 @@ const bufferbypassaltb_radio_id2 = document.getElementById(
 );
 const defaultValue = `999999, -999999, -9999`;
 const moveto2 = document.getElementById("moveto2");
-const redstar = document.querySelectorAll(".redstar");
 const redstarbypass = document.querySelectorAll(".redstarbypass");
 
 let mp_radio;
@@ -137,11 +136,7 @@ document.querySelectorAll(".bufferbypass_radio").forEach((check) => {
       each.disabled != false ? (each.disabled = false) : (each.disabled = true);
     });
 
-    // redstar.forEach((each) => {
-    //   each.textContent != "*"
-    //     ? (each.textContent = "*")
-    //     : (each.textContent = "");
-    // });
+    // Adds/Removes the red stars
     redstarbypass.forEach((each) => {
       each.textContent != "*"
         ? (each.textContent = "*")

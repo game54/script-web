@@ -52,15 +52,23 @@ select {
   border-radius: 4px;
 }
 
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 2rem;
+  color: #fff;
+}
+
 .btn {
   display: flex;
   justify-content: center;
-  margin: 1rem 0 5rem;
+  margin-bottom: 5rem;
 }
 
 .movetobox {
   display: flex;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .movetoclass {
@@ -168,6 +176,10 @@ input[type="text"]:disabled {
 .redstarbypass {
   color: #991b1b;
   font-size: 1.6rem;
+}
+
+.requiredfield {
+  padding: 0;
 }
 
 .requiredfield p {
