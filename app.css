@@ -27,14 +27,12 @@ body {
 ::placeholder {
   color: #999;
 }
-::placeholder:disabled {
-  color: #fff;
+input:disabled::placeholder {
+  color: rgba(255, 255, 255, 0.1);
 }
 
 div {
   padding: 1rem;
-  /* background-color: #bbb; */
-  /* background-color: #f6f6f6; */
   overflow: hidden;
 }
 
@@ -48,7 +46,6 @@ select {
   font-size: 1.7rem;
   width: 100%;
   padding: 12px;
-  /* border: 1px solid #ccc; */
   border-radius: 4px;
 }
 
@@ -115,7 +112,8 @@ input[type="radio"] {
 }
 
 input[type="text"]:disabled {
-  background: #999;
+  background: rgba(153, 153, 153, 0.3);
+  /* background: #999; */
   /* background: #333; */
   transition: 0.3s;
 }
@@ -142,16 +140,11 @@ input[type="text"]:disabled {
   border: 2px solid #555;
   border-radius: 4px;
   margin: 1rem;
-  /* padding: 0.2rem 1rem; */
-  /* background-color: #222; */
 }
 
 .inGroup {
   padding: 0.1rem 2rem;
 }
-/* .inGroup input {
-  width: 90%;
-} */
 
 .bufftab {
   display: grid;
