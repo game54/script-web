@@ -297,7 +297,7 @@ ${gkidzigguratpath1.value || "empty"}
 ${gkidzigguratpath2.value || "empty"}
 ------------------------------------------------------------------------------------------------
 13)BUFFER-ID:
-${bufferid.value || bufferbypassid.value}
+${bufferid.value || bufferbypassid.value || 0}
 14) BUFFS-PICKUP[7]:
 ${buff1.value || "empty"}
 ${buff2.value || "empty"}
@@ -376,9 +376,9 @@ ${soeiflow_radio || 0}
 30)Set Script's Start time using 24h system and minutes also(1-24h and 1-59minutes). ---- ON/OFF 1=ON , 0=OFF 
 ${starttimer_radio || 0}
 Set Hours:
-${starttimerhour.value || "empty"}
+${starttimerhour.value || 0}
 Set Minutes:
-${starttimermin.value || "empty"}
+${starttimermin.value || 0}
 ======================================NO BLANKS/SPACES. DO NOT DELETE LINES============================================================`;
 
   // Convert the text to BLOB.
