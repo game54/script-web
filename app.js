@@ -273,7 +273,7 @@ ${password.value.trim() || 0}
 ${loadMap.value.trim() || "empty"}
 ------------------------------------------------------------------------------------------------
 7)GK-ID(TELEPORT TO HUNTING GROUNDS):
-${gkId.value || 0}
+${gkId.value?.trim() || 0}
 8)TeleportPath[5]:
 ${gkpath1.value.trim() || "empty"}
 ${gkpath2.value.trim() || "empty"}
@@ -282,7 +282,7 @@ ${gkpath4.value.trim() || "empty"}
 ${gkpath5.value.trim() || "empty"}
 ------------------------------------------------------------------------------------------------
 9)GK-ID2(FROM TOWN TO TOWN), OPTIONAL: e.g If you die in varka and spawn giran you want to return goddard and then tp hunting grounds.
-${gkidtown.value || 0}
+${gkidtown.value?.trim() || 0}
 10)Teleportpath2[5](Use 9999 if not used):
 ${gktownpath1.value.trim() || "empty"}
 ${gktownpath2.value.trim() || "empty"}
@@ -291,7 +291,7 @@ ${gktownpath4.value.trim() || "empty"}
 ${gktownpath5.value.trim() || "empty"}
 ------------------------------------------------------------------------------------------------
 11)GK-ID3 ZIGGURAT(TELEPORT BETWEEN PATHS-EG. ZIGGURAT@catacombs) OPTIONAL:
-${gkidziggurat.value || 0}
+${gkidziggurat.value?.trim() || 0}
 12)Teleportpath3[2]:
 ${gkidzigguratpath1.value.trim() || "empty"}
 ${gkidzigguratpath2.value.trim() || "empty"}
@@ -308,7 +308,7 @@ ${buff6.value.trim() || "empty"}
 ${buff7.value.trim() || "empty"}
 ---------------------------------------------------------------------
 15) BUFFS BYPASS INSTEAD OF PICKUP ON/OFF.
-${bufferbypass_radio.trim() || 0}
+${bufferbypass_radio?.trim() || 0}
 14)BUFFS-BYPASS[7]: USING BYPASS METHOD. MAX 7 LINES - NO BLANKS/SPACES.
 ${buffbypass1.value.trim() || "empty"}
 ${buffbypass2.value.trim() || "empty"}
@@ -319,7 +319,7 @@ ${buffbypass6.value.trim() || "empty"}
 ${buffbypass7.value.trim() || "empty"}
 ------------------------------------------------------------------------------------------------
 15) BUYMP & BSS   ----   ON/OFF 1=ON , 0=OFF 
-${mp_radio.trim() || 0}
+${mp_radio?.trim() || 0}
 16) GM SHOP ID:
 ${gmshopid.value.trim() || 0}
 17) MP Buy TAB @GmSHOP
@@ -334,21 +334,21 @@ ${bssid.value.trim() || 0}
 ${bssvalue.value.trim() || 0}
 --------------------------------------------------------------------------------------------------
 21) Auto-Login ON:1 , OFF:0
-${autologin_radio.trim() || 0}
+${autologin_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
 22) Random movement while hitting mobs ON:1 , OFF:0
-${randommove_radio.trim() || 0}
+${randommove_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
 23) GK2(town to town) ON/OFF
-${gktown_radio.trim() || 0}
+${gktown_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
 24) GK3(Ziggurat) ON/OFF
-${gkziggurat_radio.trim() || 0}
+${gkziggurat_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
                                    ALT+B SETTINGS
 If you enable alt+b settings all previous teleports,buffers are automatic disabled.
 25) ENABLE ALT+B ON:1 , OFF:0
-${bufferbypassaltb_radio.trim() || 0}
+${bufferbypassaltb_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
 26) TELEPORT[5]:
 ${tpbypass1.value.trim() || "empty"}
@@ -368,17 +368,17 @@ ${buffbypass7.value.trim() || "empty"}
 _bbs_buffer_bp?skill=78905346
 --------------------------------------------------------------------------------------------------
 28)Hunting grounds rebuff, no soe. [Buffbook on f12] ---- ON/OFF 1=ON , 0=OFF 
-${huntingrebuff_radio.trim() || 0}
+${huntingrebuff_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
 29)Soe if bss/ss-mana pot is low  ---- ON/OFF 1=ON , 0=OFF [NOT WORKING PROPERLY ATM. Problem found at While after rebuff]
-${soeiflow_radio.trim() || 0}
+${soeiflow_radio?.trim() || 0}
 --------------------------------------------------------------------------------------------------
 30)Set Script's Start time using 24h system and minutes also(1-24h and 1-59minutes). ---- ON/OFF 1=ON , 0=OFF 
-${starttimer_radio.trim() || 0}
+${starttimer_radio?.trim() || 0}
 Set Hours:
-${starttimerhour.value.trim() || 0}
+${starttimerhour.value?.trim() || 0}
 Set Minutes:
-${starttimermin.value.trim() || 0}
+${starttimermin.value?.trim() || 0}
 ======================================NO BLANKS/SPACES. DO NOT DELETE LINES============================================================`;
 
   // Convert the text to BLOB.
